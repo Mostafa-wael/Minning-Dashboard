@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:minning/left_upper_widget.dart';
+import 'package:minning/right_upper_widget.dart';
 
 import 'bottom_widget.dart';
 
@@ -16,7 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  const BottomWidget(),
+      home: const MyHomePage(title: 'Flutter Demo'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -42,33 +45,26 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        appBar: AppBar(
+          toolbarHeight: MediaQuery.of(context).size.height * 0.5 / 10,
+          title: Text(widget.title),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
+        body: Column(
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height * 6 / 10,
+              // color: Colors.amber,
+              child: Row(children: const <Widget>[
+                LeftUpperWidget(),
+                RightUpperWidget()
+              ]),
+            ),
+            Container(
+              height: MediaQuery.of(context).size.height * 3.5 / 10,
+              // color: Colors.blueAccent,
+              child: BottomWidget(),
+            )
+          ],
+        ));
   }
 }

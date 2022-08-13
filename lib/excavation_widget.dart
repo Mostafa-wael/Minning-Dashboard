@@ -1,0 +1,85 @@
+import 'package:flutter/material.dart';
+import 'package:minning/row_entry.dart';
+
+class ExcavationWidget extends StatelessWidget {
+  const ExcavationWidget({super.key});
+
+  // create a body widget
+  Widget widgetBody(BuildContext context) {
+    return Column(children: <Widget>[
+      Container(
+        width: MediaQuery.of(context).size.width * 1 / 4,
+        height: MediaQuery.of(context).size.width * 0.025,
+        color: Color.fromRGBO(189, 183, 107, 0.856),
+        child: Text(
+          "Excavation",
+          textAlign: TextAlign.center,
+        ),
+      ),
+      SizedBox(
+        height: 10,
+      ),
+      Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            color: Color.fromRGBO(219, 165, 33, 0.856),
+            child: Text(
+              "Materials",
+              textAlign: TextAlign.center,
+            ),
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            color: Color.fromRGBO(219, 165, 33, 0.856),
+            child: Text(
+              "Quantity/m3",
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ],
+      ),
+      SizedBox(
+        height: 5,
+      ),
+      RowEntry(label: "Mud/shale/clay", outputValue: "", isInput: true),
+      SizedBox(
+        height: 5,
+      ),
+      RowEntry(label: "Marl", outputValue: "", isInput: true),
+      SizedBox(
+        height: 5,
+      ),
+      RowEntry(label: "stone", outputValue: "", isInput: true),
+      SizedBox(
+        height: 5,
+      ),
+      RowEntry(label: "phosphate", outputValue: "", isInput: true),
+      SizedBox(
+        height: 5,
+      ),
+      RowEntry(label: "Revenue/t", outputValue: "5", isInput: false),
+      SizedBox(
+        height: 5,
+      ),
+      RowEntry(label: "Production cost/t", outputValue: "10", isInput: false),
+      SizedBox(
+        height: 5,
+      ),
+      RowEntry(label: "Stripping cost/t", outputValue: "50", isInput: false),
+      SizedBox(
+        height: 5,
+      ),
+    ]);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return widgetBody(context);
+  }
+}

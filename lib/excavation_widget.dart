@@ -47,31 +47,59 @@ class ExcavationWidget extends StatelessWidget {
       SizedBox(
         height: 5,
       ),
-      RowEntry(label: "Mud/shale/clay", outputValue: "", isInput: true),
+      RowEntry(
+          label: "Mud/shale/clay",
+          outputValue: "",
+          isInput: true,
+          width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
         height: 5,
       ),
-      RowEntry(label: "Marl", outputValue: "", isInput: true),
+      RowEntry(
+          label: "Marl",
+          outputValue: "",
+          isInput: true,
+          width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
         height: 5,
       ),
-      RowEntry(label: "stone", outputValue: "", isInput: true),
+      RowEntry(
+          label: "stone",
+          outputValue: "",
+          isInput: true,
+          width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
         height: 5,
       ),
-      RowEntry(label: "phosphate", outputValue: "", isInput: true),
+      RowEntry(
+          label: "phosphate",
+          outputValue: "",
+          isInput: true,
+          width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
         height: 5,
       ),
-      RowEntry(label: "Revenue/t", outputValue: "5", isInput: false),
+      RowEntry(
+          label: "Revenue/t",
+          outputValue: "5",
+          isInput: false,
+          width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
         height: 5,
       ),
-      RowEntry(label: "Production cost/t", outputValue: "10", isInput: false),
+      RowEntry(
+          label: "Production cost/t",
+          outputValue: "10",
+          isInput: false,
+          width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
         height: 5,
       ),
-      RowEntry(label: "Stripping cost/t", outputValue: "50", isInput: false),
+      RowEntry(
+          label: "Stripping cost/t",
+          outputValue: "50",
+          isInput: false,
+          width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
         height: 5,
       ),

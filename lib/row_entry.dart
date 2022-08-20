@@ -5,11 +5,13 @@ class RowEntry extends StatelessWidget {
       {super.key,
       required this.label,
       required this.outputValue,
-      required this.isInput});
+      required this.isInput,
+      required this.width});
 
   final String label;
   final String outputValue;
   final bool isInput;
+  final double width;
 
   // create a body widget
   Widget widgetBody(BuildContext context) {
@@ -18,7 +20,7 @@ class RowEntry extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: MediaQuery.of(context).size.width * 0.4 / 4,
+          width: width,
           color: Color.fromRGBO(238, 232, 170, 0.856),
           child: Text(
             label,
@@ -29,7 +31,7 @@ class RowEntry extends StatelessWidget {
           width: 20,
         ),
         Container(
-          width: MediaQuery.of(context).size.width * 0.4 / 4,
+          width: width,
           child: SizedBox(
             height: 19,
             child: TextFormField(

@@ -19,19 +19,35 @@ class RosterWidget extends StatelessWidget {
       SizedBox(
         height: 5,
       ),
-      RowEntry(label: "Number days", outputValue: "", isInput: true),
+      RowEntry(
+          label: "Number days",
+          outputValue: "",
+          isInput: true,
+          width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
         height: 5,
       ),
-      RowEntry(label: "Hour shift", outputValue: "", isInput: true),
+      RowEntry(
+          label: "Hour shift",
+          outputValue: "",
+          isInput: true,
+          width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
         height: 5,
       ),
-      RowEntry(label: "SR/m3", outputValue: "10", isInput: false),
+      RowEntry(
+          label: "SR/m3",
+          outputValue: "10",
+          isInput: false,
+          width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
         height: 5,
       ),
-      RowEntry(label: "BESR", outputValue: "50", isInput: false),
+      RowEntry(
+          label: "BESR",
+          outputValue: "50",
+          isInput: false,
+          width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
         height: 5,
       ),

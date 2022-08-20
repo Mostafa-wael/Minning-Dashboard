@@ -55,7 +55,7 @@ class EquipmentWidget extends StatelessWidget {
           label: "Wheel Loader",
           outputValue: "",
           isInput: true,
-          width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2)),
+          width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.6),
       SizedBox(
         height: 5,
       ),

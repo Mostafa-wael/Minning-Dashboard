@@ -1,10 +1,20 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:minning/left_upper_widget.dart';
 import 'package:minning/right_upper_widget.dart';
+import 'package:window_size/window_size.dart';
 
 import 'bottom_widget.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+    setWindowTitle('My App');
+    setWindowMaxSize(const Size(1920, 1080));
+    setWindowMinSize(const Size(1200, 840));
+  }
   runApp(const MyApp());
 }
 

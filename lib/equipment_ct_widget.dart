@@ -47,7 +47,7 @@ class EquipmentCtWidget extends StatelessWidget {
           label: "Time to go and back",
           outputValue: "",
           isInput: true,
-          width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2)),
+          width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7),
       SizedBox(
         height: 5,
       ),
@@ -55,7 +55,7 @@ class EquipmentCtWidget extends StatelessWidget {
           label: "Loading and unloading time",
           outputValue: "",
           isInput: true,
-          width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2)),
+          width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7),
       SizedBox(
         height: 5,
       ),

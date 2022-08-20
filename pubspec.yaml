@@ -38,7 +38,10 @@ dependencies:
   pdf: ^3.8.2
   pluto_grid: ^5.0.4
   horizontal_data_table: ^4.1.1+1
-
+  window_size:
+      git:
+        url: https://github.com/google/flutter-desktop-embedding
+        path: plugins/window_size
 dev_dependencies:
   flutter_test:
     sdk: flutter

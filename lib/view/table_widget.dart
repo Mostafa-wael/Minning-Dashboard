@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:horizontal_data_table/horizontal_data_table.dart';
-import 'package:minning/row_entry.dart';
+import 'package:minning/view/row_entry.dart';
 
 class TableWidget extends StatelessWidget {
   TableWidget({super.key});

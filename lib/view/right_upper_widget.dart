@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:minning/excavation_widget.dart';
-import 'package:minning/roster_widget.dart';
-import 'package:minning/row_entry.dart';
+import 'package:minning/view/excavation_widget.dart';
+import 'package:minning/view/roster_widget.dart';
+import 'package:minning/view/row_entry.dart';
 
-class RightUpperWidget extends StatelessWidget {
+class RightUpperWidget extends StatefulWidget {
   const RightUpperWidget({super.key});
 
+  @override
+  State<RightUpperWidget> createState() => _RightUpperWidgetState();
+}
+
+class _RightUpperWidgetState extends State<RightUpperWidget> {
   // create a body widget
   Widget widgetBody(BuildContext context) {
     return Column(

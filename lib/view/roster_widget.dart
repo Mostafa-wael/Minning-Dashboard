@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:minning/row_entry.dart';
+import 'package:minning/view/row_entry.dart';
 
 class RosterWidget extends StatelessWidget {
   const RosterWidget({super.key});

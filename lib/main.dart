@@ -1,11 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:minning/left_upper_widget.dart';
-import 'package:minning/right_upper_widget.dart';
+import 'package:minning/view/bottom_widget.dart';
+import 'package:minning/view/left_upper_widget.dart';
+import 'package:minning/view/right_upper_widget.dart';
 import 'package:window_size/window_size.dart';
-
-import 'bottom_widget.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

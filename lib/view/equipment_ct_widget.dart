@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:horizontal_data_table/horizontal_data_table.dart';
-import 'package:minning/row_entry.dart';
-import 'package:minning/triple_row_entry.dart';
+import 'package:minning/view/row_entry.dart';
+import 'package:minning/view/triple_row_entry.dart';
 
 class EquipmentCtWidget extends StatelessWidget {
   const EquipmentCtWidget({super.key});

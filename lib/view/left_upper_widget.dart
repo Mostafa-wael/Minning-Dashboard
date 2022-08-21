@@ -35,7 +35,7 @@ class _LeftUpperWidgetState extends State<LeftUpperWidget> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                EquipmentWidget(haulageController: haulageController),
+                EquipmentWidget(),
                 SizedBox(height: 20),
                 EquipmentCtWidget()
               ]),

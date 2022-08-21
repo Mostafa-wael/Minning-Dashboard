@@ -34,13 +34,9 @@ class _RightUpperWidgetState extends State<RightUpperWidget> {
             width: MediaQuery.of(context).size.width * 1.5 / 4,
             // color: Colors.yellowAccent,
             child: Column(children: <Widget>[
-              ExcavationWidget(
-                excavationController: excavationController,
-              ),
+              ExcavationWidget(),
               SizedBox(height: 20),
-              RosterWidget(
-                rosterController: this.rosterController,
-              )
+              RosterWidget()
             ]),
           )
         ]);

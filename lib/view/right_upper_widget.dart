@@ -3,14 +3,28 @@ import 'package:minning/view/excavation_widget.dart';
 import 'package:minning/view/roster_widget.dart';
 import 'package:minning/view/row_entry.dart';
 
-class RightUpperWidget extends StatefulWidget {
-  const RightUpperWidget({super.key});
+import '../controller/excavation_controller.dart';
+import '../controller/roster_controller.dart';
 
+class RightUpperWidget extends StatefulWidget {
+  const RightUpperWidget(
+      {super.key,
+      required this.excavationController,
+      required this.rosterController});
+
+  final ExcavationController excavationController;
+  final RosterController rosterController;
   @override
-  State<RightUpperWidget> createState() => _RightUpperWidgetState();
+  State<RightUpperWidget> createState() =>
+      _RightUpperWidgetState(this.excavationController, this.rosterController);
 }
 
 class _RightUpperWidgetState extends State<RightUpperWidget> {
+  _RightUpperWidgetState(this.excavationController, this.rosterController);
+
+  final ExcavationController excavationController;
+  final RosterController rosterController;
+
   // create a body widget
   Widget widgetBody(BuildContext context) {
     return Column(
@@ -20,9 +34,13 @@ class _RightUpperWidgetState extends State<RightUpperWidget> {
             width: MediaQuery.of(context).size.width * 1.5 / 4,
             // color: Colors.yellowAccent,
             child: Column(children: <Widget>[
-              ExcavationWidget(),
+              ExcavationWidget(
+                excavationController: excavationController,
+              ),
               SizedBox(height: 20),
-              RosterWidget()
+              RosterWidget(
+                rosterController: this.rosterController,
+              )
             ]),
           )
         ]);

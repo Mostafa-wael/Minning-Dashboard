@@ -20,11 +20,11 @@ class RowEntry extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: width,
           color: Color.fromRGBO(238, 232, 170, 0.856),
           child: Text(
             label,
             textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 12),
           ),
         ),
         SizedBox(

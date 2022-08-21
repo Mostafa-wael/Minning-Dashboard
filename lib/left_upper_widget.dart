@@ -24,7 +24,7 @@ class _LeftUpperWidgetState extends State<LeftUpperWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: MediaQuery.of(context).size.width * 2.5 / 4 * (1 / 4),
+          width: MediaQuery.of(context).size.width * 2.5 / 4 * 0.3,
           child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -35,7 +35,7 @@ class _LeftUpperWidgetState extends State<LeftUpperWidget> {
               ]),
         ),
         Container(
-            width: MediaQuery.of(context).size.width * 2.5 / 4 * (3 / 4),
+            width: MediaQuery.of(context).size.width * 2.5 / 4 * 0.7,
             child: TableWidget()),
       ],
     );

@@ -1,6 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:minning/controller/excavation_controller.dart';
+import 'package:minning/controller/haulage_controller.dart';
+import 'package:minning/controller/roster_controller.dart';
 import 'package:minning/view/bottom_widget.dart';
 import 'package:minning/view/left_upper_widget.dart';
 import 'package:minning/view/right_upper_widget.dart';
@@ -43,37 +46,48 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  HaulageController haulageController = HaulageController();
+  ExcavationController excavationController = ExcavationController();
+  RosterController rosterController = RosterController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          toolbarHeight: MediaQuery.of(context).size.height * 0.5 / 10,
-          title: Text(widget.title),
-        ),
-        body: Column(
-          children: [
-            Container(
-              height: MediaQuery.of(context).size.height * 6 / 10,
-              // color: Colors.amber,
-              child: Row(children: const <Widget>[
-                LeftUpperWidget(),
-                RightUpperWidget()
-              ]),
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height * 3.5 / 10,
-              // color: Colors.blueAccent,
-              child: BottomWidget(),
-            )
-          ],
-        ));
+      appBar: AppBar(
+        toolbarHeight: MediaQuery.of(context).size.height * 0.5 / 10,
+        title: Text(widget.title),
+      ),
+      body: Column(
+        children: [
+          Container(
+            height: MediaQuery.of(context).size.height * 6 / 10,
+            // color: Colors.amber,
+            child: Row(children: <Widget>[
+              LeftUpperWidget(haulageController: this.haulageController),
+              RightUpperWidget(
+                excavationController: this.excavationController,
+                rosterController: this.rosterController,
+              )
+            ]),
+          ),
+          Container(
+            height: MediaQuery.of(context).size.height * 3.5 / 10,
+            // color: Colors.blueAccent,
+            child: BottomWidget(),
+          )
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            rosterController.calculateBesr();
+            rosterController.calculateSrOverMcubed();
+            excavationController.calculateProductionCost();
+            excavationController.calculateRevenue();
+            excavationController.calculateStrippingCost();
+          });
+        },
+      ),
+    );
   }
 }

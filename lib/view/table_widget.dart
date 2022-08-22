@@ -5,6 +5,7 @@ import 'package:minning/view/row_entry.dart';
 class TableWidget extends StatelessWidget {
   TableWidget({super.key});
 
+  final List<int> dumpValues = <int>[1, 2, 3, 4, 5, 6];
   final List<String> rowHeaders = <String>[
     'Bulldozer',
     'Excavator',
@@ -25,7 +26,7 @@ class TableWidget extends StatelessWidget {
   Widget widgetBody(BuildContext context) {
     return HorizontalDataTable(
       leftHandSideColumnWidth: 150,
-      rightHandSideColumnWidth: 7 * 175,
+      rightHandSideColumnWidth: 7 * 200,
       isFixedHeader: true,
       headerWidgets: _getTitleWidget(),
       leftSideItemBuilder: _generateFirstColumnRow,
@@ -62,9 +63,10 @@ class TableWidget extends StatelessWidget {
   Widget _getTitleItemWidget(String label, double width) {
     return Row(
       children: [
-        const CircleAvatar(
-          backgroundImage: AssetImage('assets/images/cat.jpg'),
-          radius: 10,
+        Image(
+          image: AssetImage('assets/images/cat.jpg'),
+          width: 35,
+          height: 35,
         ),
         Container(
           child: Text(label, style: TextStyle(fontWeight: FontWeight.bold)),
@@ -88,134 +90,38 @@ class TableWidget extends StatelessWidget {
   }
 
   Widget _generateRightHandSideColumnRow(BuildContext context, int index) {
+    var cell = Container(
+      child: index == columnHeaders.length - 1
+          ? SizedBox(
+              height: 19,
+              child: TextFormField(
+                initialValue: "",
+                textAlign: TextAlign.center,
+                cursorColor: Colors.black,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(width: 1, color: Colors.black),
+                  ),
+                ),
+              ),
+            )
+          : Text(
+              dumpValues[index].toString(),
+            ),
+      width: 200,
+      height: 52,
+      // padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
+      alignment: Alignment.centerLeft,
+    );
+
     return Row(
       children: <Widget>[
-        Container(
-          child: index == columnHeaders.length - 1
-              ? SizedBox(
-                  height: 19,
-                  child: TextFormField(
-                    initialValue: "",
-                    textAlign: TextAlign.center,
-                    cursorColor: Colors.black,
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: Colors.black),
-                      ),
-                    ),
-                  ),
-                )
-              : Text("5"),
-          width: 175,
-          height: 52,
-          padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-          alignment: Alignment.centerLeft,
-        ),
-        Container(
-          child: index == columnHeaders.length - 1
-              ? SizedBox(
-                  height: 19,
-                  child: TextFormField(
-                    initialValue: "",
-                    textAlign: TextAlign.center,
-                    cursorColor: Colors.black,
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: Colors.black),
-                      ),
-                    ),
-                  ),
-                )
-              : Text("5"),
-          width: 175,
-          height: 52,
-          padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-          alignment: Alignment.centerLeft,
-        ),
-        Container(
-          child: index == columnHeaders.length - 1
-              ? SizedBox(
-                  height: 19,
-                  child: TextFormField(
-                    initialValue: "",
-                    textAlign: TextAlign.center,
-                    cursorColor: Colors.black,
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: Colors.black),
-                      ),
-                    ),
-                  ),
-                )
-              : Text("5"),
-          width: 175,
-          height: 52,
-          padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-          alignment: Alignment.centerLeft,
-        ),
-        Container(
-          child: index == columnHeaders.length - 1
-              ? SizedBox(
-                  height: 19,
-                  child: TextFormField(
-                    initialValue: "",
-                    textAlign: TextAlign.center,
-                    cursorColor: Colors.black,
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: Colors.black),
-                      ),
-                    ),
-                  ),
-                )
-              : Text("5"),
-          width: 175,
-          height: 52,
-          padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-          alignment: Alignment.centerLeft,
-        ),
-        Container(
-          child: index == columnHeaders.length - 1
-              ? SizedBox(
-                  height: 19,
-                  child: TextFormField(
-                    initialValue: "",
-                    textAlign: TextAlign.center,
-                    cursorColor: Colors.black,
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: Colors.black),
-                      ),
-                    ),
-                  ),
-                )
-              : Text("5"),
-          width: 175,
-          height: 52,
-          padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-          alignment: Alignment.centerLeft,
-        ),
-        Container(
-          child: index == columnHeaders.length - 1
-              ? SizedBox(
-                  height: 19,
-                  child: TextFormField(
-                    initialValue: "",
-                    textAlign: TextAlign.center,
-                    cursorColor: Colors.black,
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: Colors.black),
-                      ),
-                    ),
-                  ),
-                )
-              : Text("5"),
-          width: 175,
-          height: 52,
-          padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-          alignment: Alignment.centerLeft,
-        ),
+        cell,
+        cell,
+        cell,
+        cell,
+        cell,
+        cell,
       ],
     );
   }

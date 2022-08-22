@@ -71,8 +71,8 @@ class _EquipmentPhosphateWidgetState extends State<EquipmentPhosphateWidget> {
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
                 child: SizedBox(
                     height: 19,
-                    child: Text(
-                        haulageController.BulldozerList[0].value.toString())),
+                    child: Text(haulageController.equipmentPhosphate.excavator
+                        .toString())),
               )
             ],
           ),
@@ -108,8 +108,8 @@ class _EquipmentPhosphateWidgetState extends State<EquipmentPhosphateWidget> {
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
                 child: SizedBox(
                     height: 19,
-                    child: Text(
-                        haulageController.BulldozerList[0].value.toString())),
+                    child: Text(haulageController.equipmentPhosphate.wheelLoader
+                        .toString())),
               )
             ],
           ),
@@ -145,8 +145,9 @@ class _EquipmentPhosphateWidgetState extends State<EquipmentPhosphateWidget> {
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
                 child: SizedBox(
                     height: 19,
-                    child: Text(
-                        haulageController.BulldozerList[0].value.toString())),
+                    child: Text(haulageController
+                        .equipmentPhosphate.actror6Wheels
+                        .toString())),
               )
             ],
           ),

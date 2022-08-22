@@ -73,7 +73,7 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                 child: SizedBox(
                     height: 19,
                     child: Text(
-                        haulageController.BulldozerList[0].value.toString())),
+                        haulageController.totalEquipment.bulldozer.toString())),
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
@@ -81,7 +81,8 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                   height: 19,
                   child: TextFormField(
                     initialValue:
-                        haulageController.BulldozerList[0].value.toString(),
+                        (haulageController.totalEquipment.bulldozer.toInt())
+                            .toString(),
                     enabled: true,
                     textAlign: TextAlign.center,
                     cursorColor: Colors.black,
@@ -91,7 +92,14 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                       ),
                     ),
                     onChanged: (value) {
-                      setState(() {});
+                      setState(() {
+                        if (!value.isEmpty) {
+                          haulageController.totalEquipment.bulldozer =
+                              double.parse(value);
+                        } else {
+                          haulageController.totalEquipment.bulldozer = 0;
+                        }
+                      });
                     },
                   ),
                 ),
@@ -131,7 +139,7 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                 child: SizedBox(
                     height: 19,
                     child: Text(
-                        haulageController.BulldozerList[0].value.toString())),
+                        haulageController.totalEquipment.excavator.toString())),
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
@@ -139,7 +147,8 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                   height: 19,
                   child: TextFormField(
                     initialValue:
-                        haulageController.BulldozerList[0].value.toString(),
+                        (haulageController.totalEquipment.excavator.toInt())
+                            .toString(),
                     enabled: true,
                     textAlign: TextAlign.center,
                     cursorColor: Colors.black,
@@ -149,7 +158,14 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                       ),
                     ),
                     onChanged: (value) {
-                      setState(() {});
+                      setState(() {
+                        if (!value.isEmpty) {
+                          haulageController.totalEquipment.excavator =
+                              double.parse(value);
+                        } else {
+                          haulageController.totalEquipment.excavator = 0;
+                        }
+                      });
                     },
                   ),
                 ),
@@ -188,8 +204,8 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
                 child: SizedBox(
                     height: 19,
-                    child: Text(
-                        haulageController.BulldozerList[0].value.toString())),
+                    child: Text(haulageController.totalEquipment.wheelLoader
+                        .toString())),
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
@@ -197,7 +213,8 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                   height: 19,
                   child: TextFormField(
                     initialValue:
-                        haulageController.BulldozerList[0].value.toString(),
+                        (haulageController.totalEquipment.wheelLoader.toInt())
+                            .toString(),
                     enabled: true,
                     textAlign: TextAlign.center,
                     cursorColor: Colors.black,
@@ -207,7 +224,14 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                       ),
                     ),
                     onChanged: (value) {
-                      setState(() {});
+                      setState(() {
+                        if (!value.isEmpty) {
+                          haulageController.totalEquipment.wheelLoader =
+                              double.parse(value);
+                        } else {
+                          haulageController.totalEquipment.wheelLoader = 0;
+                        }
+                      });
                     },
                   ),
                 ),
@@ -246,8 +270,8 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
                 child: SizedBox(
                     height: 19,
-                    child: Text(
-                        haulageController.BulldozerList[0].value.toString())),
+                    child: Text(haulageController.totalEquipment.dumperTrucker
+                        .toString())),
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
@@ -255,7 +279,8 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                   height: 19,
                   child: TextFormField(
                     initialValue:
-                        haulageController.BulldozerList[0].value.toString(),
+                        (haulageController.totalEquipment.dumperTrucker.toInt())
+                            .toString(),
                     enabled: true,
                     textAlign: TextAlign.center,
                     cursorColor: Colors.black,
@@ -265,7 +290,14 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                       ),
                     ),
                     onChanged: (value) {
-                      setState(() {});
+                      setState(() {
+                        if (!value.isEmpty) {
+                          haulageController.totalEquipment.dumperTrucker =
+                              double.parse(value);
+                        } else {
+                          haulageController.totalEquipment.dumperTrucker = 0;
+                        }
+                      });
                     },
                   ),
                 ),
@@ -304,8 +336,8 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
                 child: SizedBox(
                     height: 19,
-                    child: Text(
-                        haulageController.BulldozerList[0].value.toString())),
+                    child: Text(haulageController.totalEquipment.actror6Wheels
+                        .toString())),
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
@@ -313,7 +345,8 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                   height: 19,
                   child: TextFormField(
                     initialValue:
-                        haulageController.BulldozerList[0].value.toString(),
+                        (haulageController.totalEquipment.actror6Wheels.toInt())
+                            .toString(),
                     enabled: true,
                     textAlign: TextAlign.center,
                     cursorColor: Colors.black,
@@ -323,7 +356,14 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                       ),
                     ),
                     onChanged: (value) {
-                      setState(() {});
+                      setState(() {
+                        if (!value.isEmpty) {
+                          haulageController.totalEquipment.actror6Wheels =
+                              double.parse(value);
+                        } else {
+                          haulageController.totalEquipment.actror6Wheels = 0;
+                        }
+                      });
                     },
                   ),
                 ),

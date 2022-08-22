@@ -85,6 +85,10 @@ class _MyHomePageState extends State<MyHomePage> {
             excavationController.calculateProductionCost();
             excavationController.calculateRevenue();
             excavationController.calculateStrippingCost();
+            haulageController.calculateEquipmentOverburden();
+            haulageController.calculateEquipmentCT();
+            haulageController.calculateEquipmentPhosphate();
+            haulageController.calculateTotalEquipment();
           });
         },
       ),

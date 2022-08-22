@@ -42,7 +42,7 @@ class _EquipmentoverburdenWidgetState extends State<EquipmentoverburdenWidget> {
       Row(
         children: [
           SizedBox(
-            width: 15,
+            width: 5,
           ),
           Column(
             mainAxisSize: MainAxisSize.max,
@@ -73,8 +73,8 @@ class _EquipmentoverburdenWidgetState extends State<EquipmentoverburdenWidget> {
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
                 child: SizedBox(
                     height: 19,
-                    child: Text(
-                        haulageController.BulldozerList[0].value.toString())),
+                    child: Text(haulageController.equipmentOverburden.bulldozer
+                        .toString())),
               )
             ],
           ),
@@ -110,8 +110,8 @@ class _EquipmentoverburdenWidgetState extends State<EquipmentoverburdenWidget> {
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
                 child: SizedBox(
                     height: 19,
-                    child: Text(
-                        haulageController.BulldozerList[0].value.toString())),
+                    child: Text(haulageController.equipmentOverburden.excavator
+                        .toString())),
               )
             ],
           ),
@@ -147,8 +147,9 @@ class _EquipmentoverburdenWidgetState extends State<EquipmentoverburdenWidget> {
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
                 child: SizedBox(
                     height: 19,
-                    child: Text(
-                        haulageController.BulldozerList[0].value.toString())),
+                    child: Text(haulageController
+                        .equipmentOverburden.wheelLoader
+                        .toString())),
               )
             ],
           ),
@@ -184,8 +185,9 @@ class _EquipmentoverburdenWidgetState extends State<EquipmentoverburdenWidget> {
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
                 child: SizedBox(
                     height: 19,
-                    child: Text(
-                        haulageController.BulldozerList[0].value.toString())),
+                    child: Text(haulageController
+                        .equipmentOverburden.dumperTrucker
+                        .toString())),
               )
             ],
           ),
@@ -221,8 +223,9 @@ class _EquipmentoverburdenWidgetState extends State<EquipmentoverburdenWidget> {
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
                 child: SizedBox(
                     height: 19,
-                    child: Text(
-                        haulageController.BulldozerList[0].value.toString())),
+                    child: Text(haulageController
+                        .equipmentOverburden.actror6Wheels
+                        .toString())),
               )
             ],
           ),

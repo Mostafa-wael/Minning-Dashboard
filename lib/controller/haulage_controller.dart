@@ -1,17 +1,24 @@
+import 'dart:math';
+
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:minning/models/bulldozer_model.dart';
+import 'package:minning/models/equipment_ct_mdoel.dart';
+import 'package:minning/models/equipment_overburden_model.dart';
+import 'package:minning/models/equipment_phosphate_model.dart';
 import 'package:minning/models/excavator_model.dart';
+import 'package:minning/models/total_equipment_model.dart';
 import 'package:minning/models/wheelloader_model.dart';
 
 class HaulageController extends GetxController {
-  TextEditingController bulldozerController = TextEditingController();
-  TextEditingController excavatorController = TextEditingController();
-  TextEditingController wheelLoaderController = TextEditingController();
-
   var BulldozerList = <Bulldozer>[];
   var WheelLoaderList = <WheelLoader>[];
   var ExcavatorList = <Excavator>[];
+
+  EQuipmentCT eQuipmentCT = EQuipmentCT();
+  EquipmentOverburden equipmentOverburden = EquipmentOverburden();
+  EquipmentPhosphate equipmentPhosphate = EquipmentPhosphate();
+  TotalEquipment totalEquipment = TotalEquipment();
 
   final BulldozerImagesList = <String>[
     'assets/images/cat.jpg',
@@ -88,5 +95,35 @@ class HaulageController extends GetxController {
     }
   }
 
-  void setInputs() {}
+  void calculateEquipmentCT() {
+    Random rand = Random();
+    this.eQuipmentCT.actror6Wheels = rand.nextInt(1000);
+    this.eQuipmentCT.actror6WheelsPh = rand.nextInt(1000);
+    this.eQuipmentCT.dumperTrucker = rand.nextInt(1000);
+  }
+
+  void calculateEquipmentOverburden() {
+    Random rand = Random();
+    this.equipmentOverburden.actror6Wheels = rand.nextDouble() * 256;
+    this.equipmentOverburden.bulldozer = rand.nextDouble() * 256;
+    this.equipmentOverburden.dumperTrucker = rand.nextDouble() * 256;
+    this.equipmentOverburden.excavator = rand.nextDouble() * 256;
+    this.equipmentOverburden.wheelLoader = rand.nextDouble() * 256;
+  }
+
+  void calculateEquipmentPhosphate() {
+    Random rand = Random();
+    this.equipmentPhosphate.actror6Wheels = rand.nextDouble() * 256;
+    this.equipmentPhosphate.excavator = rand.nextDouble() * 256;
+    this.equipmentPhosphate.wheelLoader = rand.nextDouble() * 256;
+  }
+
+  void calculateTotalEquipment() {
+    Random rand = Random();
+    this.totalEquipment.actror6Wheels = rand.nextDouble() * 256;
+    this.totalEquipment.bulldozer = rand.nextDouble() * 256;
+    this.totalEquipment.dumperTrucker = rand.nextDouble() * 256;
+    this.totalEquipment.excavator = rand.nextDouble() * 256;
+    this.totalEquipment.wheelLoader = rand.nextDouble() * 256;
+  }
 }

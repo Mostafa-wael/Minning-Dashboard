@@ -3,10 +3,22 @@ import 'package:horizontal_data_table/horizontal_data_table.dart';
 import 'package:minning/view/row_entry.dart';
 import 'package:minning/view/triple_row_entry.dart';
 
+import '../controller/haulage_controller.dart';
 import 'column_entry.dart';
 
-class EquipmentPhosphateWidget extends StatelessWidget {
-  const EquipmentPhosphateWidget({super.key});
+class EquipmentPhosphateWidget extends StatefulWidget {
+  const EquipmentPhosphateWidget(
+      {super.key, required HaulageController this.haulageController});
+
+  final HaulageController haulageController;
+  @override
+  State<EquipmentPhosphateWidget> createState() =>
+      _EquipmentPhosphateWidgetState(this.haulageController);
+}
+
+class _EquipmentPhosphateWidgetState extends State<EquipmentPhosphateWidget> {
+  _EquipmentPhosphateWidgetState(this.haulageController);
+  final HaulageController haulageController;
 
   // create a body widget
   Widget widgetBody(BuildContext context) {
@@ -30,30 +42,114 @@ class EquipmentPhosphateWidget extends StatelessWidget {
           SizedBox(
             height: 5,
           ),
-          ColumnEntry(
-              label: "Excavator",
-              outputValue: "",
-              isInput: false,
-              width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
-              icon: 'assets/images/cat.jpg'),
+          Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                children: [
+                  Image(
+                    image: AssetImage('assets/images/cat.jpg'),
+                    width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                    height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                  ),
+                  SizedBox(width: 10),
+                  Container(
+                    color: Color.fromRGBO(238, 232, 170, 0.856),
+                    child: Text(
+                      "Excavator",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 12),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
+                child: SizedBox(
+                    height: 19,
+                    child: Text(
+                        haulageController.BulldozerList[0].value.toString())),
+              )
+            ],
+          ),
           SizedBox(
             width: 15,
           ),
-          ColumnEntry(
-              label: "Wheel Loader",
-              outputValue: "",
-              isInput: false,
-              width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
-              icon: 'assets/images/cat.jpg'),
+          Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                children: [
+                  Image(
+                    image: AssetImage('assets/images/cat.jpg'),
+                    width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                    height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                  ),
+                  SizedBox(width: 10),
+                  Container(
+                    color: Color.fromRGBO(238, 232, 170, 0.856),
+                    child: Text(
+                      "Wheel Loader",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 12),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
+                child: SizedBox(
+                    height: 19,
+                    child: Text(
+                        haulageController.BulldozerList[0].value.toString())),
+              )
+            ],
+          ),
           SizedBox(
             width: 15,
           ),
-          ColumnEntry(
-              label: "Actor 6 Wheels",
-              outputValue: "",
-              isInput: false,
-              width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
-              icon: 'assets/images/cat.jpg'),
+          Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                children: [
+                  Image(
+                    image: AssetImage('assets/images/cat.jpg'),
+                    width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                    height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                  ),
+                  SizedBox(width: 10),
+                  Container(
+                    color: Color.fromRGBO(238, 232, 170, 0.856),
+                    child: Text(
+                      "Actor 6 Wheels",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 12),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
+                child: SizedBox(
+                    height: 19,
+                    child: Text(
+                        haulageController.BulldozerList[0].value.toString())),
+              )
+            ],
+          ),
           SizedBox(
             width: 15,
           ),

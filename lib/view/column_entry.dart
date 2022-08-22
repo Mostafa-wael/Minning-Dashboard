@@ -47,20 +47,7 @@ class ColumnEntry extends StatelessWidget {
         ),
         Container(
           width: width,
-          child: SizedBox(
-            height: 19,
-            child: TextFormField(
-              initialValue: outputValue,
-              enabled: isInput,
-              textAlign: TextAlign.center,
-              cursorColor: Colors.black,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderSide: TextFieldDecoration.border(),
-                ),
-              ),
-            ),
-          ),
+          child: SizedBox(height: 19, child: Text("20")),
         )
       ],
     );

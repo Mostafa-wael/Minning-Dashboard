@@ -8,27 +8,60 @@ class RowEntry extends StatelessWidget {
       required this.outputValue,
       required this.isInput,
       required this.width,
-      this.icon});
+      this.icon,
+      this.isDropMenu});
 
   final String label;
   final String outputValue;
   final bool isInput;
   final double width;
   final String? icon;
+  final bool? isDropMenu;
 
   // create a body widget
   Widget widgetBody(BuildContext context) {
+    int index = 0;
+    var items = [
+      'Item 1',
+      'Item 2',
+      'Item 3',
+    ];
+
     return Row(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        this.icon != null
-            ? Image(
-                image: AssetImage(icon!),
-                width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
-                height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+        this.isDropMenu != null
+            ? DropdownButton(
+                icon: Container(
+                  child: Image(
+                    image: AssetImage(icon!),
+                    width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                    height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                  ),
+                ),
+                items: items.map((String i) {
+                  return DropdownMenuItem(
+                      value: items.indexOf(i),
+                      child: Container(
+                        child: Image(
+                          image: AssetImage(icon!),
+                          width:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                          height:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                        ),
+                      ));
+                }).toList(),
+                onChanged: ((value) => print(value)),
               )
-            : Container(),
+            : this.icon != null
+                ? Image(
+                    image: AssetImage(icon!),
+                    width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                    height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                  )
+                : Container(),
         this.icon != null ? SizedBox(width: 10) : Container(),
         Container(
           color: Color.fromRGBO(238, 232, 170, 0.856),

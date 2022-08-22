@@ -1,20 +1,21 @@
 import 'dart:ffi';
 
+import 'package:flutter/material.dart';
 import 'package:minning/models/roster_model.dart';
 
 class RosterController {
-  Roster? roster = Roster();
+  Roster roster = Roster();
 
   RosterController() {
-    roster?.numOfDays = 0;
-    roster?.hourShift = 0;
+    roster.numOfDays = 0;
+    roster.hourShift = 0;
   }
 
   void calculateSrOverMcubed() {
-    roster?.srOverm3 = 300;
+    roster.srOverm3 = roster.numOfDays;
   }
 
   void calculateBesr() {
-    roster?.BESR = 50;
+    roster.BESR = roster.hourShift;
   }
 }

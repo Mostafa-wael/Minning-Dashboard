@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:minning/controller/roster_controller.dart';
 import 'package:minning/view/row_entry.dart';
 
-class RosterWidget extends StatelessWidget {
-  const RosterWidget({super.key});
+import '../decoration/textfield_decoration.dart';
+
+class RosterWidget extends StatefulWidget {
+  const RosterWidget(
+      {super.key, required RosterController this.rosterController});
+  final RosterController rosterController;
+  @override
+  State<RosterWidget> createState() =>
+      _RosterWidgetState(this.rosterController);
+}
+
+class _RosterWidgetState extends State<RosterWidget> {
+  _RosterWidgetState(this.rosterController);
+  final RosterController rosterController;
 
   // create a body widget
   Widget widgetBody(BuildContext context) {
@@ -19,35 +32,151 @@ class RosterWidget extends StatelessWidget {
       SizedBox(
         height: 5,
       ),
-      RowEntry(
-          label: "Number days",
-          outputValue: "",
-          isInput: true,
-          width: MediaQuery.of(context).size.width * 0.4 / 4),
+      Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            color: Color.fromRGBO(238, 232, 170, 0.856),
+            child: Text(
+              "Number days",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 12),
+            ),
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            child: SizedBox(
+              height: 19,
+              child: TextFormField(
+                initialValue: rosterController.roster.numOfDays.toString(),
+                enabled: true,
+                textAlign: TextAlign.center,
+                cursorColor: Colors.black,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: TextFieldDecoration.border(),
+                  ),
+                ),
+                onChanged: (value) {
+                  setState(() {
+                    if (!value.isEmpty) {
+                      rosterController.roster.numOfDays = int.parse(value);
+                    } else {
+                      rosterController.roster.numOfDays = 0;
+                    }
+                  });
+                },
+              ),
+            ),
+          )
+        ],
+      ),
       SizedBox(
         height: 3,
       ),
-      RowEntry(
-          label: "Hour shift",
-          outputValue: "",
-          isInput: true,
-          width: MediaQuery.of(context).size.width * 0.4 / 4),
+      Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            color: Color.fromRGBO(238, 232, 170, 0.856),
+            child: Text(
+              "Hour shift",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 12),
+            ),
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            child: SizedBox(
+              height: 19,
+              child: TextFormField(
+                initialValue: rosterController.roster.hourShift.toString(),
+                enabled: true,
+                textAlign: TextAlign.center,
+                cursorColor: Colors.black,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: TextFieldDecoration.border(),
+                  ),
+                ),
+                onChanged: (value) {
+                  setState(() {
+                    if (!value.isEmpty) {
+                      rosterController.roster.hourShift = int.parse(value);
+                    } else {
+                      rosterController.roster.hourShift = 0;
+                    }
+                  });
+                },
+              ),
+            ),
+          )
+        ],
+      ),
       SizedBox(
         height: 3,
       ),
-      RowEntry(
-          label: "SR/m3",
-          outputValue: "10",
-          isInput: false,
-          width: MediaQuery.of(context).size.width * 0.4 / 4),
+      Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            color: Color.fromRGBO(238, 232, 170, 0.856),
+            child: Text(
+              "SR/m3",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 12),
+            ),
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            child: SizedBox(
+                height: 19,
+                child: Text(
+                  rosterController.roster.srOverm3.toString(),
+                )),
+          )
+        ],
+      ),
       SizedBox(
         height: 3,
       ),
-      RowEntry(
-          label: "BESR",
-          outputValue: "50",
-          isInput: false,
-          width: MediaQuery.of(context).size.width * 0.4 / 4),
+      Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            color: Color.fromRGBO(238, 232, 170, 0.856),
+            child: Text(
+              "BESR",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 12),
+            ),
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            child: SizedBox(
+                height: 19,
+                child: Text(
+                  rosterController.roster.BESR.toString(),
+                )),
+          )
+        ],
+      ),
       SizedBox(
         height: 3,
       ),

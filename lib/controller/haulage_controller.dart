@@ -1,8 +1,14 @@
+import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:minning/models/bulldozer_model.dart';
 import 'package:minning/models/excavator_model.dart';
 import 'package:minning/models/wheelloader_model.dart';
 
-class HaulageController {
+class HaulageController extends GetxController {
+  TextEditingController bulldozerController = TextEditingController();
+  TextEditingController excavatorController = TextEditingController();
+  TextEditingController wheelLoaderController = TextEditingController();
+
   var BulldozerList = <Bulldozer>[];
   var WheelLoaderList = <WheelLoader>[];
   var ExcavatorList = <Excavator>[];
@@ -81,4 +87,6 @@ class HaulageController {
       ExcavatorList.add(excavator);
     }
   }
+
+  void setInputs() {}
 }

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:horizontal_data_table/horizontal_data_table.dart';
 import 'package:minning/controller/haulage_controller.dart';
+import 'package:minning/view/equipment_ct_out.dart';
+import 'package:minning/view/equipment_overburden_widget.dart';
+import 'package:minning/view/equipment_phosphate_widget.dart';
 import 'package:minning/view/right_upper_widget.dart';
 import 'package:minning/view/table_widget.dart';
+import 'package:minning/view/total_equipment_widget.dart';
 import 'package:pluto_grid/pluto_grid.dart';
 
 import 'equipment_ct_widget.dart';
@@ -42,7 +46,23 @@ class _LeftUpperWidgetState extends State<LeftUpperWidget> {
         ),
         Container(
             width: MediaQuery.of(context).size.width * 3 / 4 * 0.7,
-            child: TableWidget()),
+            child: Column(
+              children: [
+                EquipmentCtOutputWidget(),
+                SizedBox(
+                  height: 10,
+                ),
+                EquipmentoverburdenWidget(),
+                SizedBox(
+                  height: 10,
+                ),
+                EquipmentPhosphateWidget(),
+                SizedBox(
+                  height: 10,
+                ),
+                TotalEquipmentWidget(),
+              ],
+            )),
       ],
     );
   }

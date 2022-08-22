@@ -8,7 +8,7 @@ class ExcavationWidget extends StatelessWidget {
   Widget widgetBody(BuildContext context) {
     return Column(children: <Widget>[
       Container(
-        width: MediaQuery.of(context).size.width * 1 / 4,
+        width: MediaQuery.of(context).size.width * 1 / 4 * 0.75,
         height: MediaQuery.of(context).size.width * 0.025,
         color: Color.fromRGBO(189, 183, 107, 0.856),
         child: Text(
@@ -51,33 +51,37 @@ class ExcavationWidget extends StatelessWidget {
           label: "Mud/shale/clay",
           outputValue: "",
           isInput: true,
-          width: MediaQuery.of(context).size.width * 0.4 / 4),
+          width: MediaQuery.of(context).size.width * 0.4 / 4,
+          icon: 'assets/images/cat.jpg'),
       SizedBox(
-        height: 5,
+        height: 3,
       ),
       RowEntry(
           label: "Marl",
           outputValue: "",
           isInput: true,
-          width: MediaQuery.of(context).size.width * 0.4 / 4),
+          width: MediaQuery.of(context).size.width * 0.4 / 4,
+          icon: 'assets/images/cat.jpg'),
       SizedBox(
-        height: 5,
+        height: 3,
       ),
       RowEntry(
           label: "stone",
           outputValue: "",
           isInput: true,
-          width: MediaQuery.of(context).size.width * 0.4 / 4),
+          width: MediaQuery.of(context).size.width * 0.4 / 4,
+          icon: 'assets/images/cat.jpg'),
       SizedBox(
-        height: 5,
+        height: 3,
       ),
       RowEntry(
           label: "phosphate",
           outputValue: "",
           isInput: true,
-          width: MediaQuery.of(context).size.width * 0.4 / 4),
+          width: MediaQuery.of(context).size.width * 0.4 / 4,
+          icon: 'assets/images/cat.jpg'),
       SizedBox(
-        height: 5,
+        height: 3,
       ),
       RowEntry(
           label: "Revenue/t",
@@ -85,7 +89,7 @@ class ExcavationWidget extends StatelessWidget {
           isInput: false,
           width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
-        height: 5,
+        height: 3,
       ),
       RowEntry(
           label: "Production cost/t",
@@ -93,7 +97,7 @@ class ExcavationWidget extends StatelessWidget {
           isInput: false,
           width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
-        height: 5,
+        height: 3,
       ),
       RowEntry(
           label: "Stripping cost/t",
@@ -101,7 +105,7 @@ class ExcavationWidget extends StatelessWidget {
           isInput: false,
           width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
-        height: 5,
+        height: 3,
       ),
     ]);
   }

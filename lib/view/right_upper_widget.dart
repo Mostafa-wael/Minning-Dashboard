@@ -31,11 +31,11 @@ class _RightUpperWidgetState extends State<RightUpperWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Container(
-            width: MediaQuery.of(context).size.width * 1.5 / 4,
+            width: MediaQuery.of(context).size.width * 1 / 4,
             // color: Colors.yellowAccent,
             child: Column(children: <Widget>[
               ExcavationWidget(),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               RosterWidget()
             ]),
           )

@@ -10,11 +10,11 @@ class EquipmentCtWidget extends StatelessWidget {
   Widget widgetBody(BuildContext context) {
     return Column(children: <Widget>[
       Row(
-        // mainAxisSize: MainAxisSize.max,
-        // mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: MediaQuery.of(context).size.width * 2.5 / 4 * (1 / 9),
+            width: MediaQuery.of(context).size.width * 2.5 / 4 * (1 / 8),
             color: Color.fromRGBO(219, 165, 33, 0.856),
             child: Text(
               "Equipment C.T",
@@ -22,25 +22,28 @@ class EquipmentCtWidget extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: 20,
+            width: 15,
           ),
-          CircleAvatar(
-            backgroundImage: AssetImage('assets/images/cat.jpg'),
-            radius: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2) * 0.2,
-          ),
-          SizedBox(
-            width: 10,
-          ),
-          CircleAvatar(
-            backgroundImage: AssetImage('assets/images/cat.jpg'),
-            radius: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2) * 0.2,
+          Image(
+            image: AssetImage('assets/images/cat.jpg'),
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+            height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
           ),
           SizedBox(
-            width: 10,
+            width: 4,
           ),
-          CircleAvatar(
-            backgroundImage: AssetImage('assets/images/cat.jpg'),
-            radius: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2) * 0.2,
+          Image(
+            image: AssetImage('assets/images/cat.jpg'),
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+            height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+          ),
+          SizedBox(
+            width: 4,
+          ),
+          Image(
+            image: AssetImage('assets/images/cat.jpg'),
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+            height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
           ),
         ],
       ),

@@ -12,7 +12,7 @@ class EquipmentWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: MediaQuery.of(context).size.width * 2.5 / 4 * (1 / 9),
+            width: MediaQuery.of(context).size.width * 2.5 / 4 * (1 / 8),
             color: Color.fromRGBO(219, 165, 33, 0.856),
             child: Text(
               "Equipment",
@@ -39,7 +39,8 @@ class EquipmentWidget extends StatelessWidget {
           label: "Bulldozer",
           outputValue: "",
           isInput: true,
-          width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2)),
+          width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
+          icon: 'assets/images/cat.jpg'),
       SizedBox(
         height: 5,
       ),
@@ -47,7 +48,8 @@ class EquipmentWidget extends StatelessWidget {
           label: "Excavator",
           outputValue: "",
           isInput: true,
-          width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2)),
+          width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
+          icon: 'assets/images/cat.jpg'),
       SizedBox(
         height: 5,
       ),
@@ -55,7 +57,8 @@ class EquipmentWidget extends StatelessWidget {
           label: "Wheel Loader",
           outputValue: "",
           isInput: true,
-          width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.6),
+          width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.6,
+          icon: 'assets/images/cat.jpg'),
       SizedBox(
         height: 5,
       ),

@@ -8,7 +8,7 @@ class RosterWidget extends StatelessWidget {
   Widget widgetBody(BuildContext context) {
     return Column(children: <Widget>[
       Container(
-        width: MediaQuery.of(context).size.width * 1 / 4,
+        width: MediaQuery.of(context).size.width * 1 / 4 * 0.75,
         height: MediaQuery.of(context).size.width * 0.025,
         color: Color.fromRGBO(189, 183, 107, 0.856),
         child: Text(
@@ -25,7 +25,7 @@ class RosterWidget extends StatelessWidget {
           isInput: true,
           width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
-        height: 5,
+        height: 3,
       ),
       RowEntry(
           label: "Hour shift",
@@ -33,7 +33,7 @@ class RosterWidget extends StatelessWidget {
           isInput: true,
           width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
-        height: 5,
+        height: 3,
       ),
       RowEntry(
           label: "SR/m3",
@@ -41,7 +41,7 @@ class RosterWidget extends StatelessWidget {
           isInput: false,
           width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
-        height: 5,
+        height: 3,
       ),
       RowEntry(
           label: "BESR",
@@ -49,7 +49,7 @@ class RosterWidget extends StatelessWidget {
           isInput: false,
           width: MediaQuery.of(context).size.width * 0.4 / 4),
       SizedBox(
-        height: 5,
+        height: 3,
       ),
     ]);
   }

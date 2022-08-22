@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minning/decoration/textfield_decoration.dart';
 
 class RowEntry extends StatelessWidget {
   const RowEntry(
@@ -6,12 +7,14 @@ class RowEntry extends StatelessWidget {
       required this.label,
       required this.outputValue,
       required this.isInput,
-      required this.width});
+      required this.width,
+      this.icon});
 
   final String label;
   final String outputValue;
   final bool isInput;
   final double width;
+  final String? icon;
 
   // create a body widget
   Widget widgetBody(BuildContext context) {
@@ -19,6 +22,14 @@ class RowEntry extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        this.icon != null
+            ? Image(
+                image: AssetImage(icon!),
+                width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+              )
+            : Container(),
+        this.icon != null ? SizedBox(width: 10) : Container(),
         Container(
           color: Color.fromRGBO(238, 232, 170, 0.856),
           child: Text(
@@ -41,7 +52,7 @@ class RowEntry extends StatelessWidget {
               cursorColor: Colors.black,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(width: 1, color: Colors.black),
+                  borderSide: TextFieldDecoration.border(),
                 ),
               ),
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minning/decoration/textfield_decoration.dart';
 
 class TripleRowEntry extends StatelessWidget {
   const TripleRowEntry(
@@ -43,10 +44,13 @@ class TripleRowEntry extends StatelessWidget {
             cursorColor: Colors.black,
             decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 1, color: Colors.black),
+                borderSide: TextFieldDecoration.border(),
               ),
             ),
           ),
+        ),
+        SizedBox(
+          width: 4,
         ),
         SizedBox(
           height: 19,
@@ -58,10 +62,13 @@ class TripleRowEntry extends StatelessWidget {
             cursorColor: Colors.black,
             decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 1, color: Colors.black),
+                borderSide: TextFieldDecoration.border(),
               ),
             ),
           ),
+        ),
+        SizedBox(
+          width: 4,
         ),
         SizedBox(
           height: 19,
@@ -73,7 +80,7 @@ class TripleRowEntry extends StatelessWidget {
             cursorColor: Colors.black,
             decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 1, color: Colors.black),
+                borderSide: TextFieldDecoration.border(),
               ),
             ),
           ),

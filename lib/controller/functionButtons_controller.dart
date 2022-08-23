@@ -8,15 +8,10 @@ class FunctionButtonController {
 
   Future<void> reportSheet() async {
     final pdf = pw.Document();
-    final image = pw.MemoryImage(
-      File('cat.jpg').readAsBytesSync(),
-    );
-
     pdf.addPage(
       pw.Page(
         build: (pw.Context context) => pw.Center(
             child: pw.Row(children: [
-          pw.Image(image),
           pw.Text('Hello World!'),
         ])),
       ),

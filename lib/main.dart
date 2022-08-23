@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Column(
         children: [
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height * 7 / 10,
             // color: Colors.amber,
             child: Row(children: <Widget>[
@@ -73,7 +73,10 @@ class _MyHomePageState extends State<MyHomePage> {
           SizedBox(
             height: MediaQuery.of(context).size.height * 2.5 / 10,
             // color: Colors.blueAccent,
-            child: const BottomWidget(),
+            child: BottomWidget(
+              excavationController: excavationController,
+              haulageController: haulageController,
+            ),
           )
         ],
       ),

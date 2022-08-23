@@ -4,11 +4,18 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
+import '../controller/excavation_controller.dart';
 import '../controller/functionButtons_controller.dart';
+import '../controller/haulage_controller.dart';
 import '../decoration/textfield_decoration.dart';
 
 class BottomWidget extends StatelessWidget {
-  const BottomWidget({super.key});
+  const BottomWidget(
+      {super.key,
+      required this.haulageController,
+      required this.excavationController});
+  final HaulageController haulageController;
+  final ExcavationController excavationController;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +33,10 @@ class BottomWidget extends StatelessWidget {
           backgroundImage: AssetImage('assets/images/cat.jpg'),
           radius: 50.0,
         ),
-        FunctionButtons(),
+        FunctionButtons(
+          excavationController: excavationController,
+          haulageController: haulageController,
+        ),
         ProjectData(),
       ],
     );
@@ -36,9 +46,15 @@ class BottomWidget extends StatelessWidget {
 class FunctionButtons extends StatelessWidget {
   final FunctionButtonController functionButtonController =
       FunctionButtonController();
+  final HaulageController haulageController;
+  final ExcavationController excavationController;
   FunctionButtons({
     Key? key,
-  }) : super(key: key);
+    required this.haulageController,
+    required this.excavationController,
+  }) : super(
+          key: key,
+        );
 
   @override
   Widget build(BuildContext context) {
@@ -55,8 +71,7 @@ class FunctionButtons extends StatelessWidget {
             const SizedBox(width: 10.0, height: 10.0),
             ElevatedButton(
               onPressed: () {
-                print('before Report saved');
-                // functionButtonController.reportSheet();
+                functionButtonController.reportSheet();
               },
               child: const Text('Report Sheet'),
             ),

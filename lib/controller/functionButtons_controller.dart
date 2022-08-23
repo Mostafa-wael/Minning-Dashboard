@@ -1,14 +1,18 @@
+// ignore_for_file: avoid_print
+
 import 'dart:io';
 import 'dart:math';
 
+import 'package:excel/excel.dart';
 import 'package:flutter/material.dart';
-import 'package:pdf/pdf.dart';
 import 'package:minning/controller/excavation_controller.dart';
 import 'package:minning/controller/haulage_controller.dart';
+import 'package:path/path.dart';
+import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
 class FunctionButtonController {
-  FunctionButtonController() {}
+  FunctionButtonController();
 
   Future<void> reportSheet(HaulageController haulageController,
       ExcavationController excavationController) async {
@@ -207,5 +211,22 @@ class FunctionButtonController {
     final file = File('reports/Report.pdf');
     await file.writeAsBytes(await pdf.save());
     print('Report saved');
+  }
+
+  void loadSheet() {
+    var file = "reports/test.xlsx";
+    var bytes = File(file).readAsBytesSync();
+    var excel = Excel.decodeBytes(bytes);
+
+    for (var table in excel.tables.keys) {
+      print(table); //sheet Name
+      print(excel.tables[table]?.maxCols);
+      print(excel.tables[table]?.maxRows);
+      if (excel.tables[table]?.rows != null) {
+        for (var row in excel.tables[table]!.rows) {
+          print(row);
+        }
+      }
+    }
   }
 }

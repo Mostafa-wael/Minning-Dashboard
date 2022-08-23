@@ -83,7 +83,9 @@ class FunctionButtons extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                functionButtonController.loadSheet();
+              },
               child: const Text('Load Sheet'),
             ),
             const SizedBox(width: 10.0, height: 10.0),

@@ -58,45 +58,35 @@ class FunctionButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('New Sheet'),
-            ),
-            const SizedBox(width: 10.0, height: 10.0),
-            ElevatedButton(
-              onPressed: () {
-                functionButtonController.reportSheet(
-                    haulageController, excavationController);
-              },
-              child: const Text('Report Sheet'),
-            ),
-          ],
+        ElevatedButton(
+          onPressed: () {},
+          child: const Text('New Sheet'),
         ),
         const SizedBox(width: 10.0, height: 10.0),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                functionButtonController.loadSheet();
-              },
-              child: const Text('Load Sheet'),
-            ),
-            const SizedBox(width: 10.0, height: 10.0),
-            ElevatedButton(
-              onPressed: () {
-                // programmatically exit the app
-                exit(0);
-              },
-              child: const Text('Exit Sheet'),
-            ),
-          ],
+        ElevatedButton(
+          onPressed: () {
+            functionButtonController.reportSheet(
+                haulageController, excavationController);
+          },
+          child: const Text('Report Sheet'),
+        ),
+        const SizedBox(width: 10.0, height: 10.0),
+        ElevatedButton(
+          onPressed: () {
+            functionButtonController.loadSheet();
+          },
+          child: const Text('Load Sheet'),
+        ),
+        const SizedBox(width: 10.0, height: 10.0),
+        ElevatedButton(
+          onPressed: () {
+            // programmatically exit the app
+            exit(0);
+          },
+          child: const Text('Exit Sheet'),
         ),
       ],
     );

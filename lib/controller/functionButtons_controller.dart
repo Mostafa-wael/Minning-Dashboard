@@ -111,7 +111,7 @@ class FunctionButtonController {
             19,
             20
           ],
-          format: (v) => '\$$v',
+          format: (v) => '$v',
           divisions: true,
         ),
       ),
@@ -169,8 +169,10 @@ class FunctionButtonController {
     );
     pdf.addPage(pw.Page(
       pageFormat: PdfPageFormat.a4,
-      build: (pw.Context context) => pw.Column(children: [
-        pw.Expanded(flex: 2, child: pw.Text('Excavation')),
+      build: (pw.Context context) =>
+          pw.Column(mainAxisAlignment: pw.MainAxisAlignment.start, children: [
+        pw.Expanded(flex: 3, child: pw.Text('Excavation')),
+        pw.Divider(),
         pw.SizedBox(height: 25),
         pw.Row(children: [
           pw.Text('Revenue/t: '),

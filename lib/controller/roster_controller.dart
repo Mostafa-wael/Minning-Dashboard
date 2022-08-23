@@ -11,11 +11,4 @@ class RosterController {
     roster.hourShift = 10;
   }
 
-  void calculateSrOverMcubed() {
-    roster.srOverm3 = roster.numOfDays;
-  }
-
-  void calculateBesr() {
-    roster.BESR = roster.hourShift;
-  }
 }

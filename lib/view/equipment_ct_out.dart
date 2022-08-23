@@ -109,7 +109,7 @@ class _EquipmentCtOutputWidgetState extends State<EquipmentCtOutputWidget> {
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
                 child: SizedBox(
                     height: 19,
-                    child: Text(haulageController.eQuipmentCT.actror6Wheels
+                    child: Text(haulageController.eQuipmentCT.actros6Wheels
                         .toString())),
               )
             ],
@@ -146,7 +146,7 @@ class _EquipmentCtOutputWidgetState extends State<EquipmentCtOutputWidget> {
                 width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2),
                 child: SizedBox(
                     height: 19,
-                    child: Text(haulageController.eQuipmentCT.actror6WheelsPh
+                    child: Text(haulageController.eQuipmentCT.actros6WheelsPh
                         .toString())),
               )
             ],

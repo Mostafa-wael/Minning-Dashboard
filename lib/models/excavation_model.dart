@@ -2,10 +2,10 @@ import 'dart:ffi';
 
 class Excavation {
   //  input
-  int mud_shale_clay = 0;
-  int marl = 0;
-  int stone = 0;
-  int phosphate = 0;
+  int mud_shale_clay = 1143000;
+  int marl = 193200;
+  int stone = 249800;
+  int phosphate = 112700;
 
   //  output
   int revenueOverT = 0;

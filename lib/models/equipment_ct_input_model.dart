@@ -1,5 +1,24 @@
 class EquipmentCTInput {
-  List<int> capacity = [30, 16, 16];
-  List<int> timeToGoAndBack = [10, 10, 20];
-  List<int> loadingAndUnloadingTime = [10, 10, 10];
+  EquipmentCTInputDumperTrucks dumperTrucks = EquipmentCTInputDumperTrucks();
+  EquipmentCTInputActros6Wheels actros6Wheels = EquipmentCTInputActros6Wheels();
+  EquipmentCTInputActros6WheelsPh actros6WheelsPh =
+      EquipmentCTInputActros6WheelsPh();
+}
+
+class EquipmentCTInputDumperTrucks {
+  int capacity = 30;
+  int timeToGoAndBack = 10;
+  int loadingAndUnloadingTime = 10;
+}
+
+class EquipmentCTInputActros6Wheels {
+  int capacity = 16;
+  int timeToGoAndBack = 10;
+  int loadingAndUnloadingTime = 10;
+}
+
+class EquipmentCTInputActros6WheelsPh {
+  int capacity = 16;
+  int timeToGoAndBack = 20;
+  int loadingAndUnloadingTime = 10;
 }

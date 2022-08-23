@@ -102,10 +102,20 @@ class HaulageController extends GetxController {
   }
 
   void calculateEquipmentCT() {
-    Random rand = Random();
-    eQuipmentCT.actros6Wheels = rand.nextInt(1000);
-    eQuipmentCT.actros6WheelsPh = rand.nextInt(1000);
-    eQuipmentCT.dumperTrucker = rand.nextInt(1000);
+    eQuipmentCT.actros6Wheels = 60.0 /
+        (equipmentCTInput.actros6Wheels.loadingAndUnloadingTime +
+            equipmentCTInput.actros6Wheels.timeToGoAndBack) *
+        equipmentCTInput.actros6Wheels.capacity;
+
+    eQuipmentCT.actros6WheelsPh = 60.0 /
+        (equipmentCTInput.actros6WheelsPh.loadingAndUnloadingTime +
+            equipmentCTInput.actros6WheelsPh.timeToGoAndBack) *
+        equipmentCTInput.actros6WheelsPh.capacity;
+
+    eQuipmentCT.dumperTrucker = 60.0 /
+        (equipmentCTInput.dumperTrucks.loadingAndUnloadingTime +
+            equipmentCTInput.dumperTrucks.timeToGoAndBack) *
+        equipmentCTInput.dumperTrucks.capacity;
   }
 
   void calculateEquipmentOverburden(ExcavationController excavationController,
@@ -113,32 +123,55 @@ class HaulageController extends GetxController {
     equipmentOverburden.bulldozer =
         (excavationController.excavation.mud_shale_clay +
                 excavationController.excavation.marl * 1.0) /
-            (rosterController.roster.numOfDays * BulldozerList[0].value);
+            (rosterController.roster.numOfDays * 10 * BulldozerList[0].value);
 
     equipmentOverburden.excavator =
         (excavationController.excavation.stone * 1.0) /
-            (rosterController.roster.numOfDays * ExcavatorList[0].value);
+            (rosterController.roster.numOfDays * 10 * ExcavatorList[0].value);
 
-    Random rand = Random();
-    equipmentOverburden.actror6Wheels = rand.nextDouble() * 256;
+    equipmentOverburden.wheelLoader = ((excavationController.excavation.marl +
+                excavationController.excavation.mud_shale_clay +
+                excavationController.excavation.stone) *
+            1.0) /
+        (rosterController.roster.numOfDays * 10 * WheelLoaderList[0].value);
 
-    equipmentOverburden.dumperTrucker = rand.nextDouble() * 256;
-    equipmentOverburden.wheelLoader = rand.nextDouble() * 256;
+    equipmentOverburden.actror6Wheels =
+        (excavationController.excavation.mud_shale_clay * 1.0) /
+            (rosterController.roster.numOfDays *
+                10 *
+                eQuipmentCT.actros6Wheels);
+
+    equipmentOverburden.dumperTrucker = (excavationController.excavation.stone +
+            excavationController.excavation.marl * 1.0) /
+        (rosterController.roster.numOfDays * 10 * eQuipmentCT.dumperTrucker);
   }
 
-  void calculateEquipmentPhosphate() {
-    Random rand = Random();
-    equipmentPhosphate.actror6Wheels = rand.nextDouble() * 256;
-    equipmentPhosphate.excavator = rand.nextDouble() * 256;
-    equipmentPhosphate.wheelLoader = rand.nextDouble() * 256;
+  void calculateEquipmentPhosphate(ExcavationController excavationController,
+      RosterController rosterController) {
+    equipmentPhosphate.excavator = (excavationController.excavation.phosphate) /
+        (rosterController.roster.numOfDays * 10 * ExcavatorList[0].value);
+
+    equipmentPhosphate.actror6Wheels = (excavationController
+            .excavation.phosphate) /
+        (rosterController.roster.numOfDays * 10 * eQuipmentCT.actros6WheelsPh);
+
+    equipmentPhosphate.wheelLoader =
+        (excavationController.excavation.phosphate) /
+            (rosterController.roster.numOfDays * 10 * WheelLoaderList[0].value);
   }
 
   void calculateTotalEquipment() {
-    Random rand = Random();
-    totalEquipment.actror6Wheels = rand.nextDouble() * 256;
-    totalEquipment.bulldozer = rand.nextDouble() * 256;
-    totalEquipment.dumperTrucker = rand.nextDouble() * 256;
-    totalEquipment.excavator = rand.nextDouble() * 256;
-    totalEquipment.wheelLoader = rand.nextDouble() * 256;
+    totalEquipment.actror6Wheels =
+        equipmentOverburden.actror6Wheels + equipmentPhosphate.actror6Wheels;
+
+    totalEquipment.bulldozer = equipmentOverburden.bulldozer;
+
+    totalEquipment.dumperTrucker = equipmentOverburden.dumperTrucker;
+
+    totalEquipment.excavator =
+        equipmentOverburden.excavator + equipmentPhosphate.excavator;
+
+    totalEquipment.wheelLoader =
+        equipmentOverburden.wheelLoader + equipmentPhosphate.wheelLoader;
   }
 }

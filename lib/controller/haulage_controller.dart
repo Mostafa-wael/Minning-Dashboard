@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:minning/controller/excavation_controller.dart';
+import 'package:minning/controller/roster_controller.dart';
 import 'package:minning/models/bulldozer_model.dart';
 import 'package:minning/models/equipment_ct_mdoel.dart';
 import 'package:minning/models/equipment_overburden_model.dart';
@@ -102,12 +104,19 @@ class HaulageController extends GetxController {
     this.eQuipmentCT.dumperTrucker = rand.nextInt(1000);
   }
 
-  void calculateEquipmentOverburden() {
+  void calculateEquipmentOverburden(ExcavationController excavationController,
+      RosterController rosterController) {
     Random rand = Random();
-    this.equipmentOverburden.actror6Wheels = rand.nextDouble() * 256;
-    this.equipmentOverburden.bulldozer = rand.nextDouble() * 256;
-    this.equipmentOverburden.dumperTrucker = rand.nextDouble() * 256;
+    this.equipmentOverburden.bulldozer =
+        (excavationController.excavation.mud_shale_clay +
+                excavationController.excavation.marl * 1.0) /
+            (rosterController.roster.numOfDays * this.BulldozerList[0].value);
+
     this.equipmentOverburden.excavator = rand.nextDouble() * 256;
+
+    this.equipmentOverburden.actror6Wheels = rand.nextDouble() * 256;
+
+    this.equipmentOverburden.dumperTrucker = rand.nextDouble() * 256;
     this.equipmentOverburden.wheelLoader = rand.nextDouble() * 256;
   }
 

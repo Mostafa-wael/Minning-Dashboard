@@ -33,7 +33,7 @@ class _LeftUpperWidgetState extends State<LeftUpperWidget> {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Container(
+        SizedBox(
           width: MediaQuery.of(context).size.width * 3 / 4 * 0.3,
           child: Column(
               mainAxisSize: MainAxisSize.max,
@@ -44,7 +44,7 @@ class _LeftUpperWidgetState extends State<LeftUpperWidget> {
                 EquipmentCtWidget(haulageController: this.haulageController)
               ]),
         ),
-        Container(
+        SizedBox(
             width: MediaQuery.of(context).size.width * 3 / 4 * 0.7,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

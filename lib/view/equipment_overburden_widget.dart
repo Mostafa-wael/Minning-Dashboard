@@ -53,7 +53,7 @@ class _EquipmentoverburdenWidgetState extends State<EquipmentoverburdenWidget> {
               Row(
                 children: [
                   Image(
-                    image: AssetImage('assets/images/cat.jpg'),
+                    image: AssetImage('assets/images/bulldozer.jpeg'),
                     width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
                     height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
                   ),
@@ -90,7 +90,7 @@ class _EquipmentoverburdenWidgetState extends State<EquipmentoverburdenWidget> {
               Row(
                 children: [
                   Image(
-                    image: AssetImage('assets/images/cat.jpg'),
+                    image: AssetImage('assets/images/excavator.jpeg'),
                     width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
                     height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
                   ),
@@ -127,7 +127,7 @@ class _EquipmentoverburdenWidgetState extends State<EquipmentoverburdenWidget> {
               Row(
                 children: [
                   Image(
-                    image: AssetImage('assets/images/cat.jpg'),
+                    image: AssetImage('assets/images/Wheel Loader.jpeg'),
                     width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
                     height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
                   ),
@@ -165,7 +165,7 @@ class _EquipmentoverburdenWidgetState extends State<EquipmentoverburdenWidget> {
               Row(
                 children: [
                   Image(
-                    image: AssetImage('assets/images/cat.jpg'),
+                    image: AssetImage('assets/images/Dumper-Trucks.jpeg'),
                     width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
                     height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
                   ),
@@ -203,7 +203,7 @@ class _EquipmentoverburdenWidgetState extends State<EquipmentoverburdenWidget> {
               Row(
                 children: [
                   Image(
-                    image: AssetImage('assets/images/cat.jpg'),
+                    image: AssetImage('assets/images/Actros-6-Wheels.jpeg'),
                     width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
                     height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
                   ),

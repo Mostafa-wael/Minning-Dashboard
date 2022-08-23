@@ -67,7 +67,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image(
-            image: AssetImage('assets/images/cat.jpg'),
+            image: AssetImage('assets/images/mud.jpeg'),
             width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
             height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
           ),
@@ -122,7 +122,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image(
-            image: AssetImage('assets/images/cat.jpg'),
+            image: AssetImage('assets/images/marl.jpeg'),
             width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
             height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
           ),
@@ -175,7 +175,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image(
-            image: AssetImage('assets/images/cat.jpg'),
+            image: AssetImage('assets/images/stone.jpeg'),
             width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
             height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
           ),
@@ -228,7 +228,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image(
-            image: AssetImage('assets/images/cat.jpg'),
+            image: AssetImage('assets/images/phosphate.jpeg'),
             width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
             height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
           ),

@@ -73,6 +73,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
           ),
           SizedBox(width: 10),
           Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             color: Color.fromRGBO(238, 232, 170, 0.856),
             child: Text(
               "Mud/shale/clay",
@@ -84,7 +85,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
             width: 20,
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             child: SizedBox(
               height: 19,
               child: TextFormField(
@@ -127,6 +128,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
           ),
           SizedBox(width: 10),
           Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             color: Color.fromRGBO(238, 232, 170, 0.856),
             child: Text(
               "Marl",
@@ -138,7 +140,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
             width: 20,
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             child: SizedBox(
               height: 19,
               child: TextFormField(
@@ -179,6 +181,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
           ),
           SizedBox(width: 10),
           Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             color: Color.fromRGBO(238, 232, 170, 0.856),
             child: Text(
               "stone",
@@ -190,7 +193,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
             width: 20,
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             child: SizedBox(
               height: 19,
               child: TextFormField(
@@ -231,6 +234,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
           ),
           SizedBox(width: 10),
           Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             color: Color.fromRGBO(238, 232, 170, 0.856),
             child: Text(
               "phosphate",
@@ -242,7 +246,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
             width: 20,
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             child: SizedBox(
               height: 19,
               child: TextFormField(
@@ -279,6 +283,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             color: Color.fromRGBO(238, 232, 170, 0.856),
             child: Text(
               "Revenue/t",
@@ -290,7 +295,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
             width: 20,
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             child: SizedBox(
                 height: 19,
                 child: Text(
@@ -307,6 +312,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             color: Color.fromRGBO(238, 232, 170, 0.856),
             child: Text(
               "Production cost/t",
@@ -318,7 +324,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
             width: 20,
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             child: SizedBox(
                 height: 19,
                 child: Text(
@@ -336,6 +342,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             color: Color.fromRGBO(238, 232, 170, 0.856),
             child: Text(
               "Stripping cost/t",
@@ -347,7 +354,7 @@ class _ExcavationWidgetState extends State<ExcavationWidget> {
             width: 20,
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             child: SizedBox(
                 height: 19,
                 child: Text(

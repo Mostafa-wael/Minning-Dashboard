@@ -37,6 +37,7 @@ class _RosterWidgetState extends State<RosterWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             color: Color.fromRGBO(238, 232, 170, 0.856),
             child: Text(
               "Number days",
@@ -48,7 +49,7 @@ class _RosterWidgetState extends State<RosterWidget> {
             width: 20,
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             child: SizedBox(
               height: 19,
               child: TextFormField(
@@ -83,6 +84,7 @@ class _RosterWidgetState extends State<RosterWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             color: Color.fromRGBO(238, 232, 170, 0.856),
             child: Text(
               "Hour shift",
@@ -94,7 +96,7 @@ class _RosterWidgetState extends State<RosterWidget> {
             width: 20,
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             child: SizedBox(
               height: 19,
               child: TextFormField(
@@ -129,6 +131,7 @@ class _RosterWidgetState extends State<RosterWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             color: Color.fromRGBO(238, 232, 170, 0.856),
             child: Text(
               "SR/m3",
@@ -140,7 +143,7 @@ class _RosterWidgetState extends State<RosterWidget> {
             width: 20,
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             child: SizedBox(
                 height: 19,
                 child: Text(
@@ -157,6 +160,7 @@ class _RosterWidgetState extends State<RosterWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             color: Color.fromRGBO(238, 232, 170, 0.856),
             child: Text(
               "BESR",
@@ -168,7 +172,7 @@ class _RosterWidgetState extends State<RosterWidget> {
             width: 20,
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             child: SizedBox(
                 height: 19,
                 child: Text(

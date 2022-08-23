@@ -218,13 +218,23 @@ class FunctionButtonController {
     var bytes = File(file).readAsBytesSync();
     var excel = Excel.decodeBytes(bytes);
 
+    Sheet sheetObject = excel['reports/test.xlsx'];
+    // var cell = sheetObject.cell(CellIndex.indexByString("A3"));
+    // print("CellType: ${cell.colIndex} ${cell.rowIndex} ${cell.value} ${cell.toString()}");
+
     for (var table in excel.tables.keys) {
-      print(table); //sheet Name
-      print(excel.tables[table]?.maxCols);
-      print(excel.tables[table]?.maxRows);
+      // print(table); //sheet Name
+      // print(excel.tables[table]?.maxCols);
+      // print(excel.tables[table]?.maxRows);
       if (excel.tables[table]?.rows != null) {
-        for (var row in excel.tables[table]!.rows) {
-          print(row);
+        for (List row in excel.tables[table]!.rows) {
+          if (row != null) {
+            for (var cell in row) {
+              if (cell != null) {
+                print(cell.value);
+              }
+            }
+          }
         }
       }
     }

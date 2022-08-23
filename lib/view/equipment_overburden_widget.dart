@@ -30,7 +30,7 @@ class _EquipmentoverburdenWidgetState extends State<EquipmentoverburdenWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: MediaQuery.of(context).size.width * 2.5 / 4 * (1 / 8),
+            width: MediaQuery.of(context).size.width * 3 / 4 * 0.2,
             color: Color.fromRGBO(219, 165, 33, 0.856),
             child: Text(
               "Equipment overburden",

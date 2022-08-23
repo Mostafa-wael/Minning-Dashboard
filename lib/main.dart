@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 7 / 10,
+            height: MediaQuery.of(context).size.height * 8 / 10,
             // color: Colors.amber,
             child: Row(children: <Widget>[
               LeftUpperWidget(haulageController: this.haulageController),
@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ]),
           ),
           Container(
-            height: MediaQuery.of(context).size.height * 2.5 / 10,
+            height: MediaQuery.of(context).size.height * 1.5 / 10,
             // color: Colors.blueAccent,
             child: BottomWidget(),
           )

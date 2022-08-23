@@ -47,7 +47,22 @@ class _LeftUpperWidgetState extends State<LeftUpperWidget> {
         Container(
             width: MediaQuery.of(context).size.width * 3 / 4 * 0.7,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Container(
+                  width: MediaQuery.of(context).size.width * 3 / 4 * 0.7,
+                  height: MediaQuery.of(context).size.width * 0.025,
+                  color: Color.fromRGBO(189, 183, 107, 0.856),
+                  child: Center(
+                    child: Text(
+                      "Haulage and excavation system",
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
                 EquipmentCtOutputWidget(
                     haulageController: this.haulageController),
                 SizedBox(

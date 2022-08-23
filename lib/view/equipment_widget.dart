@@ -63,6 +63,7 @@ class _EquipmentWidgetState extends State<EquipmentWidget> {
           ),
           SizedBox(width: 10),
           Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             color: Color.fromRGBO(238, 232, 170, 0.856),
             child: Text(
               "Bulldozer",
@@ -74,7 +75,7 @@ class _EquipmentWidgetState extends State<EquipmentWidget> {
             width: 20,
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             child: SizedBox(
               height: 19,
               child: TextFormField(
@@ -118,6 +119,7 @@ class _EquipmentWidgetState extends State<EquipmentWidget> {
           ),
           SizedBox(width: 10),
           Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             color: Color.fromRGBO(238, 232, 170, 0.856),
             child: Text(
               "Excavator",
@@ -129,7 +131,7 @@ class _EquipmentWidgetState extends State<EquipmentWidget> {
             width: 20,
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             child: SizedBox(
               height: 19,
               child: TextFormField(
@@ -173,6 +175,7 @@ class _EquipmentWidgetState extends State<EquipmentWidget> {
           ),
           SizedBox(width: 10),
           Container(
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             color: Color.fromRGBO(238, 232, 170, 0.856),
             child: Text(
               "Wheel Loader",
@@ -184,7 +187,7 @@ class _EquipmentWidgetState extends State<EquipmentWidget> {
             width: 20,
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4,
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
             child: SizedBox(
               height: 19,
               child: TextFormField(

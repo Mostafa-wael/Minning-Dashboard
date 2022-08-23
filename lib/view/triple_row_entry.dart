@@ -21,7 +21,7 @@ class TripleRowEntry extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: width,
+          width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
           color: Color.fromRGBO(238, 232, 170, 0.856),
           child: Center(
             child: Text(

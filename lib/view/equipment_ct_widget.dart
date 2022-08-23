@@ -30,7 +30,7 @@ class EquipmentCtWidget extends StatelessWidget {
             height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
           ),
           SizedBox(
-            width: 4,
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.1,
           ),
           Image(
             image: AssetImage('assets/images/cat.jpg'),
@@ -38,7 +38,7 @@ class EquipmentCtWidget extends StatelessWidget {
             height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
           ),
           SizedBox(
-            width: 4,
+            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.1,
           ),
           Image(
             image: AssetImage('assets/images/cat.jpg'),
@@ -51,10 +51,11 @@ class EquipmentCtWidget extends StatelessWidget {
         height: 5,
       ),
       TripleRowEntry(
-          label: "Capacity:m3",
-          outputValue: "",
-          isInput: true,
-          width: MediaQuery.of(context).size.width * 0.4 / 4 * (1 / 2)),
+        label: "Capacity:m3",
+        outputValue: "",
+        isInput: true,
+        width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.5,
+      ),
       SizedBox(
         height: 5,
       ),

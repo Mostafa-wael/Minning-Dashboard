@@ -21,6 +21,21 @@ class _EquipmentWidgetState extends State<EquipmentWidget> {
   int bulldozerIndex = 0;
   int excavatorIndex = 0;
   int wheelLoaderIndex = 0;
+
+  TextEditingController bulldozerTextEditingController =
+      TextEditingController();
+  TextEditingController excavatorTextEditingController =
+      TextEditingController();
+  TextEditingController wheelLoaderTextEditingController =
+      TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    bulldozerTextEditingController.text =
+        haulageController.BulldozerList[bulldozerIndex].value.toString();
+  }
+
   // create a body widget
   Widget widgetBody(BuildContext context) {
     return Column(children: <Widget>[
@@ -56,11 +71,66 @@ class _EquipmentWidgetState extends State<EquipmentWidget> {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image(
-            image: AssetImage('assets/images/cat.jpg'),
-            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
-            height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
-          ),
+          DropdownButtonHideUnderline(
+              child: ButtonTheme(
+            alignedDropdown: true,
+            child: DropdownButton(
+              value: haulageController.currentChosenBulldozer,
+              items: [
+                DropdownMenuItem(
+                    value: 0,
+                    child: Row(
+                      children: [
+                        Image(
+                          image: AssetImage(
+                              haulageController.BulldozerList[0].image),
+                          width:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                          height:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                        ),
+                      ],
+                    )),
+                DropdownMenuItem(
+                    value: 1,
+                    child: Row(
+                      children: [
+                        Image(
+                          image: AssetImage(
+                              haulageController.BulldozerList[1].image),
+                          width:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                          height:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                        ),
+                      ],
+                    )),
+                DropdownMenuItem(
+                    value: 2,
+                    child: Row(
+                      children: [
+                        Image(
+                          image: AssetImage(
+                              haulageController.BulldozerList[2].image),
+                          width:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                          height:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                        ),
+                      ],
+                    )),
+              ],
+              onChanged: (value) {
+                setState(() {
+                  haulageController.currentChosenBulldozer = value as int;
+                  bulldozerIndex = value as int;
+                  bulldozerTextEditingController.text = haulageController
+                      .BulldozerList[bulldozerIndex].value
+                      .toString();
+                });
+              },
+            ),
+          )),
           SizedBox(width: 10),
           Container(
             width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
@@ -79,9 +149,7 @@ class _EquipmentWidgetState extends State<EquipmentWidget> {
             child: SizedBox(
               height: 19,
               child: TextFormField(
-                initialValue: haulageController
-                    .BulldozerList[bulldozerIndex].value
-                    .toString(),
+                controller: bulldozerTextEditingController,
                 enabled: true,
                 textAlign: TextAlign.center,
                 cursorColor: Colors.black,

@@ -31,13 +31,6 @@ class FunctionButtonController {
       ['Wheel Loader', haulageController.output.wheelLoader],
       ['Dump Trucks', haulageController.output.dumperTrucker],
       ['Actor 6 wheels', haulageController.output.actror6Wheels],
-      ['', ''],
-      ['Revenue/t', excavationController.excavation.revenueOverT],
-      [
-        'Production cost/t',
-        excavationController.excavation.productionCostOverT
-      ],
-      ['Stripping cost/t', excavationController.excavation.strippingCostOverT],
     ];
     final table = pw.Table.fromTextArray(
       border: null,
@@ -95,7 +88,29 @@ class FunctionButtonController {
           ticks: true,
         ),
         yAxis: pw.FixedAxis(
-          [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
           format: (v) => '\$$v',
           divisions: true,
         ),
@@ -147,24 +162,45 @@ class FunctionButtonController {
                 // The output
                 pw.Expanded(flex: 3, child: pw.Text('Haulage')),
                 pw.Divider(),
+                pw.SizedBox(height: 25),
                 chart1,
                 table,
-                pw.Expanded(flex: 2, child: pw.Text('Excavation')),
-                pw.SizedBox(height: 10),
               ])),
-      // pw.Center(
-      //     child: pw.Row(children: [
-      //   pw.Text('Bulldozer: '),
-      //   pw.Text('Excavator: '),
-      //   pw.Text('Wheel Loader: '),
-      //   pw.Text('Dump Trucks: '),
-      //   pw.Text('Actor 6 wheels: '),
-      //   pw.Text('Revenue/t: '),
-      //   pw.Text('Production Cost/t: '),
-      //   pw.Text('Stripping Cost /t: '),
-      // ])),
-      // ),
     );
+    pdf.addPage(pw.Page(
+      pageFormat: PdfPageFormat.a4,
+      build: (pw.Context context) => pw.Column(children: [
+        pw.Expanded(flex: 2, child: pw.Text('Excavation')),
+        pw.SizedBox(height: 25),
+        pw.Row(children: [
+          pw.Text('Revenue/t: '),
+          pw.Text(
+            '\$${excavationController.excavation.revenueOverT.toStringAsFixed(2)}',
+            style: pw.TextStyle(
+              fontWeight: pw.FontWeight.bold,
+            ),
+          ),
+        ]),
+        pw.Row(children: [
+          pw.Text('Production cost/t: '),
+          pw.Text(
+            '\$${excavationController.excavation.productionCostOverT.toStringAsFixed(2)}',
+            style: pw.TextStyle(
+              fontWeight: pw.FontWeight.bold,
+            ),
+          ),
+        ]),
+        pw.Row(children: [
+          pw.Text('Stripping cost/t: '),
+          pw.Text(
+            '\$${excavationController.excavation.strippingCostOverT.toStringAsFixed(2)}',
+            style: pw.TextStyle(
+              fontWeight: pw.FontWeight.bold,
+            ),
+          ),
+        ]),
+      ]),
+    ));
 
     final file = File('reports/Report.pdf');
     await file.writeAsBytes(await pdf.save());

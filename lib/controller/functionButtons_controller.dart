@@ -15,12 +15,19 @@ class FunctionButtonController {
     const baseColor = PdfColors.cyan;
     const tableHeaders = ['Category', 'Result'];
 
-    const dataTable = [
-      ['Bulldozer', 80],
-      ['Excavator', 250],
-      ['Wheel Loader', 300],
-      ['Dump Trucks', 85],
-      ['Actor 6 wheels', 300],
+    var dataTable = [
+      ['Bulldozer', haulageController.output.bulldozer],
+      ['Excavator', haulageController.output.excavator],
+      ['Wheel Loader', haulageController.output.wheelLoader],
+      ['Dump Trucks', haulageController.output.dumperTrucker],
+      ['Actor 6 wheels', haulageController.output.actror6Wheels],
+      ['', ''],
+      ['Revenue/t', excavationController.excavation.revenueOverT],
+      [
+        'Production cost/t',
+        excavationController.excavation.productionCostOverT
+      ],
+      ['Stripping cost/t', excavationController.excavation.strippingCostOverT],
     ];
     final table = pw.Table.fromTextArray(
       border: null,
@@ -82,7 +89,6 @@ class FunctionButtonController {
       //   pw.Text('Stripping Cost /t: '),
       // ])),
       // ),
-
     );
 
     final file = File('reports/Report.pdf');

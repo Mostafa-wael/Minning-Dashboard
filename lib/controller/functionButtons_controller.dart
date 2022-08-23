@@ -30,8 +30,6 @@ class FunctionButtonController {
         (index) => <dynamic>[
           dataTable[index][0],
           dataTable[index][1],
-          dataTable[index][2],
-          (dataTable[index][1] as num) - (dataTable[index][2] as num),
         ],
       ),
       headerStyle: pw.TextStyle(

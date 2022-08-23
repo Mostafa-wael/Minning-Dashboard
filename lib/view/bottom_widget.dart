@@ -84,7 +84,7 @@ class BottomWidget extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children:  <Widget>[
+            children: <Widget>[
               Text('Project title:'),
               SizedBox(
                 width: 38.0,
@@ -111,7 +111,7 @@ class BottomWidget extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children:  <Widget>[
+            children: <Widget>[
               Text('Prepared By:'),
               SizedBox(
                 width: 35.0,

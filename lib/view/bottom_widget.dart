@@ -3,6 +3,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:minning/controller/roster_controller.dart';
 
 import '../controller/excavation_controller.dart';
 import '../controller/functionButtons_controller.dart';
@@ -13,9 +14,11 @@ class BottomWidget extends StatelessWidget {
   const BottomWidget(
       {super.key,
       required this.haulageController,
-      required this.excavationController});
+      required this.excavationController,
+      required this.rosterController});
   final HaulageController haulageController;
   final ExcavationController excavationController;
+  final RosterController rosterController;
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +39,7 @@ class BottomWidget extends StatelessWidget {
         FunctionButtons(
           excavationController: excavationController,
           haulageController: haulageController,
+          rosterController: rosterController,
         ),
         ProjectData(),
       ],
@@ -48,10 +52,12 @@ class FunctionButtons extends StatelessWidget {
       FunctionButtonController();
   final HaulageController haulageController;
   final ExcavationController excavationController;
+  final RosterController rosterController;
   FunctionButtons({
     Key? key,
     required this.haulageController,
     required this.excavationController,
+    required this.rosterController,
   }) : super(
           key: key,
         );
@@ -84,7 +90,8 @@ class FunctionButtons extends StatelessWidget {
           children: <Widget>[
             ElevatedButton(
               onPressed: () {
-                functionButtonController.loadSheet();
+                functionButtonController.loadSheet(
+                    haulageController, excavationController, rosterController);
               },
               child: const Text('Load Sheet'),
             ),

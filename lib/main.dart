@@ -76,6 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: BottomWidget(
               excavationController: excavationController,
               haulageController: haulageController,
+              rosterController: rosterController,
             ),
           )
         ],

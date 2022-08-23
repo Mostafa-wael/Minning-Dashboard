@@ -7,6 +7,7 @@ import 'package:excel/excel.dart';
 import 'package:flutter/material.dart';
 import 'package:minning/controller/excavation_controller.dart';
 import 'package:minning/controller/haulage_controller.dart';
+import 'package:minning/controller/roster_controller.dart';
 import 'package:path/path.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
@@ -213,7 +214,10 @@ class FunctionButtonController {
     print('Report saved');
   }
 
-  void loadSheet() {
+  void loadSheet(
+      HaulageController haulageController,
+      ExcavationController excavationController,
+      RosterController rosterController) {
     var file = "reports/test.xlsx";
     var bytes = File(file).readAsBytesSync();
     var excel = Excel.decodeBytes(bytes);

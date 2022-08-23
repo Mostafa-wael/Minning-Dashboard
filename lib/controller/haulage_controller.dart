@@ -123,41 +123,55 @@ class HaulageController extends GetxController {
     equipmentOverburden.bulldozer =
         (excavationController.excavation.mud_shale_clay +
                 excavationController.excavation.marl * 1.0) /
-            (rosterController.roster.numOfDays * 10 * BulldozerList[0].value);
+            (rosterController.roster.numOfDays *
+                rosterController.roster.hourShift *
+                BulldozerList[0].value);
 
     equipmentOverburden.excavator =
         (excavationController.excavation.stone * 1.0) /
-            (rosterController.roster.numOfDays * 10 * ExcavatorList[0].value);
+            (rosterController.roster.numOfDays *
+                rosterController.roster.hourShift *
+                ExcavatorList[0].value);
 
     equipmentOverburden.wheelLoader = ((excavationController.excavation.marl +
                 excavationController.excavation.mud_shale_clay +
                 excavationController.excavation.stone) *
             1.0) /
-        (rosterController.roster.numOfDays * 10 * WheelLoaderList[0].value);
+        (rosterController.roster.numOfDays *
+            rosterController.roster.hourShift *
+            WheelLoaderList[0].value);
 
     equipmentOverburden.actror6Wheels =
         (excavationController.excavation.mud_shale_clay * 1.0) /
             (rosterController.roster.numOfDays *
-                10 *
+                rosterController.roster.hourShift *
                 eQuipmentCT.actros6Wheels);
 
     equipmentOverburden.dumperTrucker = (excavationController.excavation.stone +
             excavationController.excavation.marl * 1.0) /
-        (rosterController.roster.numOfDays * 10 * eQuipmentCT.dumperTrucker);
+        (rosterController.roster.numOfDays *
+            rosterController.roster.hourShift *
+            eQuipmentCT.dumperTrucker);
   }
 
   void calculateEquipmentPhosphate(ExcavationController excavationController,
       RosterController rosterController) {
     equipmentPhosphate.excavator = (excavationController.excavation.phosphate) /
-        (rosterController.roster.numOfDays * 10 * ExcavatorList[0].value);
+        (rosterController.roster.numOfDays *
+            rosterController.roster.hourShift *
+            ExcavatorList[0].value);
 
-    equipmentPhosphate.actror6Wheels = (excavationController
-            .excavation.phosphate) /
-        (rosterController.roster.numOfDays * 10 * eQuipmentCT.actros6WheelsPh);
+    equipmentPhosphate.actror6Wheels =
+        (excavationController.excavation.phosphate) /
+            (rosterController.roster.numOfDays *
+                rosterController.roster.hourShift *
+                eQuipmentCT.actros6WheelsPh);
 
     equipmentPhosphate.wheelLoader =
         (excavationController.excavation.phosphate) /
-            (rosterController.roster.numOfDays * 10 * WheelLoaderList[0].value);
+            (rosterController.roster.numOfDays *
+                rosterController.roster.hourShift *
+                WheelLoaderList[0].value);
   }
 
   void calculateTotalEquipment() {

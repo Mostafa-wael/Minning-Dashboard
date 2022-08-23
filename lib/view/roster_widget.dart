@@ -64,7 +64,7 @@ class _RosterWidgetState extends State<RosterWidget> {
                 ),
                 onChanged: (value) {
                   setState(() {
-                    if (!value.isEmpty) {
+                    if (value.isNotEmpty) {
                       rosterController.roster.numOfDays = int.parse(value);
                     } else {
                       rosterController.roster.numOfDays = 0;
@@ -122,67 +122,6 @@ class _RosterWidgetState extends State<RosterWidget> {
             ),
           )
         ],
-      ),
-      SizedBox(
-        height: 3,
-      ),
-      Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
-            color: Color.fromRGBO(238, 232, 170, 0.856),
-            child: Text(
-              "SR/m3",
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 12),
-            ),
-          ),
-          SizedBox(
-            width: 20,
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
-            child: SizedBox(
-                height: 19,
-                child: Text(
-                  rosterController.roster.srOverm3.toString(),
-                )),
-          )
-        ],
-      ),
-      SizedBox(
-        height: 3,
-      ),
-      Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
-            color: Color.fromRGBO(238, 232, 170, 0.856),
-            child: Text(
-              "BESR",
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 12),
-            ),
-          ),
-          SizedBox(
-            width: 20,
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
-            child: SizedBox(
-                height: 19,
-                child: Text(
-                  rosterController.roster.BESR.toString(),
-                )),
-          )
-        ],
-      ),
-      SizedBox(
-        height: 3,
       ),
     ]);
   }

@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo'),
+      home: const MyHomePage(title: 'Project Demo'),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -80,8 +80,6 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            rosterController.calculateBesr();
-            rosterController.calculateSrOverMcubed();
             excavationController.calculateProductionCost();
             excavationController.calculateRevenue();
             excavationController.calculateStrippingCost();

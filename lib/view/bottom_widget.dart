@@ -1,4 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+
+import '../decoration/textfield_decoration.dart';
 
 class BottomWidget extends StatelessWidget {
   const BottomWidget({super.key});
@@ -53,29 +57,83 @@ class BottomWidget extends StatelessWidget {
         Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[
-              Text('Company Name:'),
-              SizedBox(
+            children: <Widget>[
+              const Text('Company Name:'),
+              const SizedBox(
                 width: 10.0,
               ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
+                child: SizedBox(
+                  height: 19,
+                  child: TextFormField(
+                    initialValue: 'Company Name',
+                    enabled: true,
+                    textAlign: TextAlign.center,
+                    cursorColor: Colors.black,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: TextFieldDecoration.border(),
+                      ),
+                    ),
+                    onChanged: (value) {},
+                  ),
+                ),
+              )
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[
+            children:  <Widget>[
               Text('Project title:'),
               SizedBox(
-                width: 10.0,
+                width: 38.0,
               ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
+                child: SizedBox(
+                  height: 19,
+                  child: TextFormField(
+                    initialValue: 'Project title',
+                    enabled: true,
+                    textAlign: TextAlign.center,
+                    cursorColor: Colors.black,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: TextFieldDecoration.border(),
+                      ),
+                    ),
+                    onChanged: (value) {},
+                  ),
+                ),
+              )
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[
+            children:  <Widget>[
               Text('Prepared By:'),
               SizedBox(
-                width: 10.0,
+                width: 35.0,
               ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
+                child: SizedBox(
+                  height: 19,
+                  child: TextFormField(
+                    initialValue: 'Prepared By',
+                    enabled: true,
+                    textAlign: TextAlign.center,
+                    cursorColor: Colors.black,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: TextFieldDecoration.border(),
+                      ),
+                    ),
+                    onChanged: (value) {},
+                  ),
+                ),
+              )
             ],
           )
         ]),

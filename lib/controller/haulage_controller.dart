@@ -34,8 +34,8 @@ class HaulageController extends GetxController {
 
   final BulldozerImagesList = <String>[
     'assets/images/cat.jpg',
-    'assets/images/cat.jpg',
-    'assets/images/cat.jpg'
+    'assets/images/cat1.jpg',
+    'assets/images/cat2.jpg'
   ];
   final BulldozerNamesList = <String>[
     'D10T',
@@ -50,8 +50,8 @@ class HaulageController extends GetxController {
 
   final ExcavatorImagesList = <String>[
     'assets/images/cat.jpg',
-    'assets/images/cat.jpg',
-    'assets/images/cat.jpg'
+    'assets/images/cat1.jpg',
+    'assets/images/cat2.jpg'
   ];
   final ExcavatorNamesList = <String>[
     'Doosan300',
@@ -66,8 +66,8 @@ class HaulageController extends GetxController {
 
   final WheelLoaderImagesList = <String>[
     'assets/images/cat.jpg',
-    'assets/images/cat.jpg',
-    'assets/images/cat.jpg'
+    'assets/images/cat1.jpg',
+    'assets/images/cat2.jpg'
   ];
   final WheelLoaderNamesList = <String>[
     '980H',

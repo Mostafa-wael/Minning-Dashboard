@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:pdf/pdf.dart';
@@ -13,7 +14,16 @@ class FunctionButtonController {
       ExcavationController excavationController) async {
     final pdf = pw.Document();
     const baseColor = PdfColors.cyan;
-    const tableHeaders = ['Category', 'Result'];
+    const chartColors = [
+      PdfColors.blue300,
+      PdfColors.green300,
+      PdfColors.amber300,
+      PdfColors.pink300,
+      PdfColors.cyan300,
+      PdfColors.purple300,
+      PdfColors.lime300,
+    ];
+    const tableHeaders = ['Category', 'Amount'];
 
     const dataTable = [
       ['Bulldozer', 80],
@@ -50,6 +60,70 @@ class FunctionButtonController {
       cellAlignment: pw.Alignment.centerRight,
       cellAlignments: {0: pw.Alignment.centerLeft},
     );
+    final chart1 = pw.Chart(
+      left: pw.Container(
+        alignment: pw.Alignment.topCenter,
+        margin: const pw.EdgeInsets.only(right: 5, top: 10),
+        child: pw.Transform.rotateBox(
+          angle: pi / 2,
+          child: pw.Text('Amount'),
+        ),
+      ),
+      overlay: pw.ChartLegend(
+        position: const pw.Alignment(-.7, 1),
+        decoration: pw.BoxDecoration(
+          color: PdfColors.white,
+          border: pw.Border.all(
+            color: PdfColors.black,
+            width: .5,
+          ),
+        ),
+      ),
+      grid: pw.CartesianGrid(
+        xAxis: pw.FixedAxis.fromStrings(
+          List<String>.generate(
+              dataTable.length, (index) => dataTable[index][0] as String),
+          marginStart: 30,
+          marginEnd: 30,
+          ticks: true,
+        ),
+        yAxis: pw.FixedAxis(
+          [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+          format: (v) => '\$$v',
+          divisions: true,
+        ),
+      ),
+      datasets: [
+        pw.BarDataSet(
+          color: PdfColors.blue100,
+          legend: tableHeaders[1],
+          width: 15,
+          offset: -10,
+          borderColor: baseColor,
+          data: List<pw.PointChartValue>.generate(
+            dataTable.length,
+            (i) {
+              final v = dataTable[i][1] as num;
+              return pw.PointChartValue(i.toDouble(), v.toDouble());
+            },
+          ),
+        ),
+        pw.BarDataSet(
+          color: PdfColors.amber100,
+          legend: tableHeaders[0],
+          width: 15,
+          offset: 10,
+          borderColor: PdfColors.amber,
+          data: List<pw.PointChartValue>.generate(
+            dataTable.length,
+            (i) {
+              final v = dataTable[i][1] as num;
+              return pw.PointChartValue(i.toDouble(), v.toDouble());
+            },
+          ),
+        ),
+      ],
+    );
 
     pdf.addPage(
       pw.Page(
@@ -66,9 +140,10 @@ class FunctionButtonController {
                 // The output
                 pw.Expanded(flex: 3, child: pw.Text('Haulage')),
                 pw.Divider(),
+                chart1,
+                table,
                 pw.Expanded(flex: 2, child: pw.Text('Excavation')),
                 pw.SizedBox(height: 10),
-                table
               ])),
       // pw.Center(
       //     child: pw.Row(children: [
@@ -82,7 +157,6 @@ class FunctionButtonController {
       //   pw.Text('Stripping Cost /t: '),
       // ])),
       // ),
-
     );
 
     final file = File('reports/Report.pdf');

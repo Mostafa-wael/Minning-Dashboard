@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minning/controller/excavation_controller.dart';
 import 'package:minning/controller/haulage_controller.dart';
 import 'package:minning/view/row_entry.dart';
 
@@ -34,6 +35,12 @@ class _EquipmentWidgetState extends State<EquipmentWidget> {
     super.initState();
     bulldozerTextEditingController.text =
         haulageController.BulldozerList[bulldozerIndex].value.toString();
+
+    excavatorTextEditingController.text =
+        haulageController.ExcavatorList[excavatorIndex].value.toString();
+
+    wheelLoaderTextEditingController.text =
+        haulageController.WheelLoaderList[wheelLoaderIndex].value.toString();
   }
 
   // create a body widget
@@ -180,11 +187,66 @@ class _EquipmentWidgetState extends State<EquipmentWidget> {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image(
-            image: AssetImage('assets/images/cat.jpg'),
-            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
-            height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
-          ),
+          DropdownButtonHideUnderline(
+              child: ButtonTheme(
+            alignedDropdown: true,
+            child: DropdownButton(
+              value: haulageController.currentChosenExcavator,
+              items: [
+                DropdownMenuItem(
+                    value: 0,
+                    child: Row(
+                      children: [
+                        Image(
+                          image: AssetImage(
+                              haulageController.ExcavatorList[0].image),
+                          width:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                          height:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                        ),
+                      ],
+                    )),
+                DropdownMenuItem(
+                    value: 1,
+                    child: Row(
+                      children: [
+                        Image(
+                          image: AssetImage(
+                              haulageController.ExcavatorList[1].image),
+                          width:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                          height:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                        ),
+                      ],
+                    )),
+                DropdownMenuItem(
+                    value: 2,
+                    child: Row(
+                      children: [
+                        Image(
+                          image: AssetImage(
+                              haulageController.ExcavatorList[2].image),
+                          width:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                          height:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                        ),
+                      ],
+                    )),
+              ],
+              onChanged: (value) {
+                setState(() {
+                  haulageController.currentChosenExcavator = value as int;
+                  excavatorIndex = value as int;
+                  excavatorTextEditingController.text = haulageController
+                      .ExcavatorList[excavatorIndex].value
+                      .toString();
+                });
+              },
+            ),
+          )),
           SizedBox(width: 10),
           Container(
             width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
@@ -203,9 +265,7 @@ class _EquipmentWidgetState extends State<EquipmentWidget> {
             child: SizedBox(
               height: 19,
               child: TextFormField(
-                initialValue: haulageController
-                    .ExcavatorList[excavatorIndex].value
-                    .toString(),
+                controller: excavatorTextEditingController,
                 enabled: true,
                 textAlign: TextAlign.center,
                 cursorColor: Colors.black,
@@ -236,11 +296,66 @@ class _EquipmentWidgetState extends State<EquipmentWidget> {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image(
-            image: AssetImage('assets/images/cat.jpg'),
-            width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
-            height: MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
-          ),
+          DropdownButtonHideUnderline(
+              child: ButtonTheme(
+            alignedDropdown: true,
+            child: DropdownButton(
+              value: haulageController.currentChosenWheelLoader,
+              items: [
+                DropdownMenuItem(
+                    value: 0,
+                    child: Row(
+                      children: [
+                        Image(
+                          image: AssetImage(
+                              haulageController.WheelLoaderList[0].image),
+                          width:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                          height:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                        ),
+                      ],
+                    )),
+                DropdownMenuItem(
+                    value: 1,
+                    child: Row(
+                      children: [
+                        Image(
+                          image: AssetImage(
+                              haulageController.WheelLoaderList[1].image),
+                          width:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                          height:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                        ),
+                      ],
+                    )),
+                DropdownMenuItem(
+                    value: 2,
+                    child: Row(
+                      children: [
+                        Image(
+                          image: AssetImage(
+                              haulageController.WheelLoaderList[2].image),
+                          width:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                          height:
+                              MediaQuery.of(context).size.width * 0.4 / 4 * 0.3,
+                        ),
+                      ],
+                    )),
+              ],
+              onChanged: (value) {
+                setState(() {
+                  haulageController.currentChosenWheelLoader = value as int;
+                  wheelLoaderIndex = value as int;
+                  wheelLoaderTextEditingController.text = haulageController
+                      .WheelLoaderList[wheelLoaderIndex].value
+                      .toString();
+                });
+              },
+            ),
+          )),
           SizedBox(width: 10),
           Container(
             width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
@@ -259,9 +374,7 @@ class _EquipmentWidgetState extends State<EquipmentWidget> {
             child: SizedBox(
               height: 19,
               child: TextFormField(
-                initialValue: haulageController
-                    .WheelLoaderList[wheelLoaderIndex].value
-                    .toString(),
+                controller: wheelLoaderTextEditingController,
                 enabled: true,
                 textAlign: TextAlign.center,
                 cursorColor: Colors.black,

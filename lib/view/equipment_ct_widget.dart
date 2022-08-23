@@ -86,8 +86,9 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
             height: 19,
             width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.5 * 0.7,
             child: TextFormField(
-              initialValue:
-                  haulageController.equipmentCTInput.capacity[0].toString(),
+              initialValue: haulageController
+                  .equipmentCTInput.dumperTrucks.capacity
+                  .toString(),
               enabled: true,
               textAlign: TextAlign.center,
               cursorColor: Colors.black,
@@ -99,10 +100,11 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
               onChanged: (value) {
                 setState(() {
                   if (!value.isEmpty) {
-                    haulageController.equipmentCTInput.capacity[0] =
+                    haulageController.equipmentCTInput.dumperTrucks.capacity =
                         int.parse(value);
                   } else {
-                    haulageController.equipmentCTInput.capacity[0] = 0;
+                    haulageController.equipmentCTInput.dumperTrucks.capacity =
+                        0;
                   }
                 });
               },
@@ -115,8 +117,9 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
             height: 19,
             width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.5 * 0.7,
             child: TextFormField(
-              initialValue:
-                  haulageController.equipmentCTInput.capacity[1].toString(),
+              initialValue: haulageController
+                  .equipmentCTInput.actros6Wheels.capacity
+                  .toString(),
               enabled: true,
               textAlign: TextAlign.center,
               cursorColor: Colors.black,
@@ -128,10 +131,11 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
               onChanged: (value) {
                 setState(() {
                   if (!value.isEmpty) {
-                    haulageController.equipmentCTInput.capacity[1] =
+                    haulageController.equipmentCTInput.actros6Wheels.capacity =
                         int.parse(value);
                   } else {
-                    haulageController.equipmentCTInput.capacity[1] = 0;
+                    haulageController.equipmentCTInput.actros6Wheels.capacity =
+                        0;
                   }
                 });
               },
@@ -144,8 +148,9 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
             height: 19,
             width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.5 * 0.7,
             child: TextFormField(
-              initialValue:
-                  haulageController.equipmentCTInput.capacity[2].toString(),
+              initialValue: haulageController
+                  .equipmentCTInput.actros6WheelsPh.capacity
+                  .toString(),
               enabled: true,
               textAlign: TextAlign.center,
               cursorColor: Colors.black,
@@ -157,10 +162,11 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
               onChanged: (value) {
                 setState(() {
                   if (!value.isEmpty) {
-                    haulageController.equipmentCTInput.capacity[2] =
-                        int.parse(value);
+                    haulageController.equipmentCTInput.actros6WheelsPh
+                        .capacity = int.parse(value);
                   } else {
-                    haulageController.equipmentCTInput.capacity[2] = 0;
+                    haulageController
+                        .equipmentCTInput.actros6WheelsPh.capacity = 0;
                   }
                 });
               },
@@ -194,7 +200,7 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
             width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.5 * 0.7,
             child: TextFormField(
               initialValue: haulageController
-                  .equipmentCTInput.timeToGoAndBack[0]
+                  .equipmentCTInput.dumperTrucks.timeToGoAndBack
                   .toString(),
               enabled: true,
               textAlign: TextAlign.center,
@@ -207,10 +213,11 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
               onChanged: (value) {
                 setState(() {
                   if (!value.isEmpty) {
-                    haulageController.equipmentCTInput.timeToGoAndBack[0] =
-                        int.parse(value);
+                    haulageController.equipmentCTInput.dumperTrucks
+                        .timeToGoAndBack = int.parse(value);
                   } else {
-                    haulageController.equipmentCTInput.timeToGoAndBack[0] = 0;
+                    haulageController
+                        .equipmentCTInput.dumperTrucks.timeToGoAndBack = 0;
                   }
                 });
               },
@@ -224,7 +231,7 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
             width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.5 * 0.7,
             child: TextFormField(
               initialValue: haulageController
-                  .equipmentCTInput.timeToGoAndBack[1]
+                  .equipmentCTInput.actros6Wheels.timeToGoAndBack
                   .toString(),
               enabled: true,
               textAlign: TextAlign.center,
@@ -237,10 +244,11 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
               onChanged: (value) {
                 setState(() {
                   if (!value.isEmpty) {
-                    haulageController.equipmentCTInput.timeToGoAndBack[1] =
-                        int.parse(value);
+                    haulageController.equipmentCTInput.actros6Wheels
+                        .timeToGoAndBack = int.parse(value);
                   } else {
-                    haulageController.equipmentCTInput.timeToGoAndBack[1] = 0;
+                    haulageController
+                        .equipmentCTInput.actros6Wheels.timeToGoAndBack = 0;
                   }
                 });
               },
@@ -254,7 +262,7 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
             width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.5 * 0.7,
             child: TextFormField(
               initialValue: haulageController
-                  .equipmentCTInput.timeToGoAndBack[2]
+                  .equipmentCTInput.actros6WheelsPh.timeToGoAndBack
                   .toString(),
               enabled: true,
               textAlign: TextAlign.center,
@@ -267,10 +275,11 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
               onChanged: (value) {
                 setState(() {
                   if (!value.isEmpty) {
-                    haulageController.equipmentCTInput.timeToGoAndBack[2] =
-                        int.parse(value);
+                    haulageController.equipmentCTInput.actros6WheelsPh
+                        .timeToGoAndBack = int.parse(value);
                   } else {
-                    haulageController.equipmentCTInput.timeToGoAndBack[2] = 0;
+                    haulageController
+                        .equipmentCTInput.actros6WheelsPh.timeToGoAndBack = 0;
                   }
                 });
               },
@@ -304,7 +313,7 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
             width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.5 * 0.7,
             child: TextFormField(
               initialValue: haulageController
-                  .equipmentCTInput.loadingAndUnloadingTime[0]
+                  .equipmentCTInput.dumperTrucks.loadingAndUnloadingTime
                   .toString(),
               enabled: true,
               textAlign: TextAlign.center,
@@ -317,11 +326,11 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
               onChanged: (value) {
                 setState(() {
                   if (!value.isEmpty) {
-                    haulageController.equipmentCTInput
-                        .loadingAndUnloadingTime[0] = int.parse(value);
+                    haulageController.equipmentCTInput.dumperTrucks
+                        .loadingAndUnloadingTime = int.parse(value);
                   } else {
-                    haulageController
-                        .equipmentCTInput.loadingAndUnloadingTime[0] = 0;
+                    haulageController.equipmentCTInput.dumperTrucks
+                        .loadingAndUnloadingTime = 0;
                   }
                 });
               },
@@ -335,7 +344,7 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
             width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.5 * 0.7,
             child: TextFormField(
               initialValue: haulageController
-                  .equipmentCTInput.loadingAndUnloadingTime[1]
+                  .equipmentCTInput.actros6Wheels.loadingAndUnloadingTime
                   .toString(),
               enabled: true,
               textAlign: TextAlign.center,
@@ -348,11 +357,11 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
               onChanged: (value) {
                 setState(() {
                   if (!value.isEmpty) {
-                    haulageController.equipmentCTInput
-                        .loadingAndUnloadingTime[1] = int.parse(value);
+                    haulageController.equipmentCTInput.actros6Wheels
+                        .loadingAndUnloadingTime = int.parse(value);
                   } else {
-                    haulageController
-                        .equipmentCTInput.loadingAndUnloadingTime[1] = 0;
+                    haulageController.equipmentCTInput.actros6Wheels
+                        .loadingAndUnloadingTime = 0;
                   }
                 });
               },
@@ -366,7 +375,7 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
             width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.5 * 0.7,
             child: TextFormField(
               initialValue: haulageController
-                  .equipmentCTInput.loadingAndUnloadingTime[2]
+                  .equipmentCTInput.actros6WheelsPh.loadingAndUnloadingTime
                   .toString(),
               enabled: true,
               textAlign: TextAlign.center,
@@ -379,11 +388,11 @@ class _EquipmentCtWidgetState extends State<EquipmentCtWidget> {
               onChanged: (value) {
                 setState(() {
                   if (!value.isEmpty) {
-                    haulageController.equipmentCTInput
-                        .loadingAndUnloadingTime[2] = int.parse(value);
+                    haulageController.equipmentCTInput.actros6WheelsPh
+                        .loadingAndUnloadingTime = int.parse(value);
                   } else {
-                    haulageController
-                        .equipmentCTInput.loadingAndUnloadingTime[2] = 0;
+                    haulageController.equipmentCTInput.actros6WheelsPh
+                        .loadingAndUnloadingTime = 0;
                   }
                 });
               },

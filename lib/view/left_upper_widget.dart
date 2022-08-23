@@ -41,7 +41,7 @@ class _LeftUpperWidgetState extends State<LeftUpperWidget> {
               children: <Widget>[
                 EquipmentWidget(haulageController: this.haulageController),
                 SizedBox(height: 20),
-                EquipmentCtWidget()
+                EquipmentCtWidget(haulageController: this.haulageController)
               ]),
         ),
         Container(

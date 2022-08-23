@@ -12,10 +12,14 @@ import 'package:minning/models/excavator_model.dart';
 import 'package:minning/models/total_equipment_model.dart';
 import 'package:minning/models/wheelloader_model.dart';
 
+import '../models/equipment_ct_input_model.dart';
+
 class HaulageController extends GetxController {
   var BulldozerList = <Bulldozer>[];
   var WheelLoaderList = <WheelLoader>[];
   var ExcavatorList = <Excavator>[];
+
+  EquipmentCTInput equipmentCTInput = EquipmentCTInput();
 
   EQuipmentCT eQuipmentCT = EQuipmentCT();
   EquipmentOverburden equipmentOverburden = EquipmentOverburden();

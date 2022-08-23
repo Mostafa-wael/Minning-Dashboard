@@ -1,11 +1,19 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
+import '../controller/functionButtons_controller.dart';
 import '../decoration/textfield_decoration.dart';
 
 class BottomWidget extends StatelessWidget {
   const BottomWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return widgetBody(context);
+  }
 
   // create a body widget
   Widget widgetBody(BuildContext context) {
@@ -14,49 +22,79 @@ class BottomWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        const CircleAvatar(
+        CircleAvatar(
           backgroundImage: AssetImage('assets/images/cat.jpg'),
           radius: 50.0,
         ),
-        SizedBox(width: 65.0),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        FunctionButtons(),
+        ProjectData(),
+      ],
+    );
+  }
+}
+
+class FunctionButtons extends StatelessWidget {
+  final FunctionButtonController functionButtonController =
+      FunctionButtonController();
+  FunctionButtons({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('New Sheet'),
-                ),
-                const SizedBox(width: 10.0, height: 10.0),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Save Sheet'),
-                ),
-              ],
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('New Sheet'),
             ),
             const SizedBox(width: 10.0, height: 10.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Load Sheet'),
-                ),
-                const SizedBox(width: 10.0, height: 10.0),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Exit Sheet'),
-                ),
-              ],
+            ElevatedButton(
+              onPressed: () {
+                print('before Report saved');
+                // functionButtonController.reportSheet();
+              },
+              child: const Text('Report Sheet'),
             ),
           ],
         ),
-        const SizedBox(
-          width: 10.0,
+        const SizedBox(width: 10.0, height: 10.0),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Load Sheet'),
+            ),
+            const SizedBox(width: 10.0, height: 10.0),
+            ElevatedButton(
+              onPressed: () {
+                // programmatically exit the app
+                exit(0);
+              },
+              child: const Text('Exit Sheet'),
+            ),
+          ],
         ),
-        Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+      ],
+    );
+  }
+}
+
+class ProjectData extends StatelessWidget {
+  const ProjectData({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -141,13 +179,6 @@ class BottomWidget extends StatelessWidget {
               )
             ],
           )
-        ]),
-      ],
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return widgetBody(context);
+        ]);
   }
 }

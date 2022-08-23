@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.brown,
       ),
       home: const MyHomePage(title: 'Project Demo'),
       debugShowCheckedModeBanner: false,
@@ -78,6 +78,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.brown,
+        tooltip: 'Calculate',
+        child: const Icon(Icons.calculate),
         onPressed: () {
           setState(() {
             excavationController.calculateProductionCost();

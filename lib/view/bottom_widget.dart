@@ -12,11 +12,13 @@ class BottomWidget extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         const CircleAvatar(
           backgroundImage: AssetImage('assets/images/cat.jpg'),
           radius: 50.0,
         ),
+        SizedBox(width: 65.0),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -63,7 +65,8 @@ class BottomWidget extends StatelessWidget {
                 width: 10.0,
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
+                width: MediaQuery.of(context).size.width * 0.4 / 4 * 1.5,
+                height: MediaQuery.of(context).size.height * 0.3 / 10,
                 child: SizedBox(
                   height: 19,
                   child: TextFormField(
@@ -90,7 +93,8 @@ class BottomWidget extends StatelessWidget {
                 width: 38.0,
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
+                width: MediaQuery.of(context).size.width * 0.4 / 4 * 1.5,
+                height: MediaQuery.of(context).size.height * 0.3 / 10,
                 child: SizedBox(
                   height: 19,
                   child: TextFormField(
@@ -117,7 +121,8 @@ class BottomWidget extends StatelessWidget {
                 width: 35.0,
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.4 / 4 * 0.7,
+                width: MediaQuery.of(context).size.width * 0.4 / 4 * 1.5,
+                height: MediaQuery.of(context).size.height * 0.3 / 10,
                 child: SizedBox(
                   height: 19,
                   child: TextFormField(

@@ -9,6 +9,7 @@ import 'package:minning/models/equipment_ct_mdoel.dart';
 import 'package:minning/models/equipment_overburden_model.dart';
 import 'package:minning/models/equipment_phosphate_model.dart';
 import 'package:minning/models/excavator_model.dart';
+import 'package:minning/models/output_model.dart';
 import 'package:minning/models/total_equipment_model.dart';
 import 'package:minning/models/wheelloader_model.dart';
 
@@ -25,6 +26,8 @@ class HaulageController extends GetxController {
   EquipmentOverburden equipmentOverburden = EquipmentOverburden();
   EquipmentPhosphate equipmentPhosphate = EquipmentPhosphate();
   TotalEquipment totalEquipment = TotalEquipment();
+
+  Outputs output = Outputs();
 
   final BulldozerImagesList = <String>[
     'assets/images/cat.jpg',
@@ -187,5 +190,11 @@ class HaulageController extends GetxController {
 
     totalEquipment.wheelLoader =
         equipmentOverburden.wheelLoader + equipmentPhosphate.wheelLoader;
+
+    // output.bulldozer = (totalEquipment.bulldozer.ceil().toInt());
+    // output.dumperTrucker = (totalEquipment.dumperTrucker.ceil().toInt());
+    // output.actror6Wheels = (totalEquipment.actror6Wheels.ceil().toInt());
+    // output.excavator = (totalEquipment.excavator.ceil().toInt());
+    // output.wheelLoader = (totalEquipment.wheelLoader.ceil().toInt());
   }
 }

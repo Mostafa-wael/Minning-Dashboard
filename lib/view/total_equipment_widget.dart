@@ -81,8 +81,7 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                   height: 19,
                   child: TextFormField(
                     initialValue:
-                        (haulageController.totalEquipment.bulldozer.toInt())
-                            .toString(),
+                        (haulageController.output.bulldozer).toString(),
                     enabled: true,
                     textAlign: TextAlign.center,
                     cursorColor: Colors.black,
@@ -94,10 +93,9 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                     onChanged: (value) {
                       setState(() {
                         if (!value.isEmpty) {
-                          haulageController.totalEquipment.bulldozer =
-                              double.parse(value);
+                          haulageController.output.bulldozer = int.parse(value);
                         } else {
-                          haulageController.totalEquipment.bulldozer = 0;
+                          haulageController.output.bulldozer = 0;
                         }
                       });
                     },
@@ -147,8 +145,7 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                   height: 19,
                   child: TextFormField(
                     initialValue:
-                        (haulageController.totalEquipment.excavator.toInt())
-                            .toString(),
+                        (haulageController.output.excavator.toInt()).toString(),
                     enabled: true,
                     textAlign: TextAlign.center,
                     cursorColor: Colors.black,
@@ -160,10 +157,9 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                     onChanged: (value) {
                       setState(() {
                         if (!value.isEmpty) {
-                          haulageController.totalEquipment.excavator =
-                              double.parse(value);
+                          haulageController.output.excavator = int.parse(value);
                         } else {
-                          haulageController.totalEquipment.excavator = 0;
+                          haulageController.output.excavator = 0;
                         }
                       });
                     },
@@ -212,9 +208,8 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                 child: SizedBox(
                   height: 19,
                   child: TextFormField(
-                    initialValue:
-                        (haulageController.totalEquipment.wheelLoader.toInt())
-                            .toString(),
+                    initialValue: (haulageController.output.wheelLoader.toInt())
+                        .toString(),
                     enabled: true,
                     textAlign: TextAlign.center,
                     cursorColor: Colors.black,
@@ -226,10 +221,10 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                     onChanged: (value) {
                       setState(() {
                         if (!value.isEmpty) {
-                          haulageController.totalEquipment.wheelLoader =
-                              double.parse(value);
+                          haulageController.output.wheelLoader =
+                              int.parse(value);
                         } else {
-                          haulageController.totalEquipment.wheelLoader = 0;
+                          haulageController.output.wheelLoader = 0;
                         }
                       });
                     },
@@ -279,7 +274,7 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                   height: 19,
                   child: TextFormField(
                     initialValue:
-                        (haulageController.totalEquipment.dumperTrucker.toInt())
+                        (haulageController.output.dumperTrucker.toInt())
                             .toString(),
                     enabled: true,
                     textAlign: TextAlign.center,
@@ -292,10 +287,10 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                     onChanged: (value) {
                       setState(() {
                         if (!value.isEmpty) {
-                          haulageController.totalEquipment.dumperTrucker =
-                              double.parse(value);
+                          haulageController.output.dumperTrucker =
+                              int.parse(value);
                         } else {
-                          haulageController.totalEquipment.dumperTrucker = 0;
+                          haulageController.output.dumperTrucker = 0;
                         }
                       });
                     },
@@ -345,7 +340,7 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                   height: 19,
                   child: TextFormField(
                     initialValue:
-                        (haulageController.totalEquipment.actror6Wheels.toInt())
+                        (haulageController.output.actror6Wheels.toInt())
                             .toString(),
                     enabled: true,
                     textAlign: TextAlign.center,
@@ -358,10 +353,10 @@ class _TotalEquipmentWidgetState extends State<TotalEquipmentWidget> {
                     onChanged: (value) {
                       setState(() {
                         if (!value.isEmpty) {
-                          haulageController.totalEquipment.actror6Wheels =
-                              double.parse(value);
+                          haulageController.output.actror6Wheels =
+                              int.parse(value);
                         } else {
-                          haulageController.totalEquipment.actror6Wheels = 0;
+                          haulageController.output.actror6Wheels = 0;
                         }
                       });
                     },

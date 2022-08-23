@@ -71,7 +71,8 @@ class FunctionButtons extends StatelessWidget {
             const SizedBox(width: 10.0, height: 10.0),
             ElevatedButton(
               onPressed: () {
-                functionButtonController.reportSheet();
+                functionButtonController.reportSheet(
+                    haulageController, excavationController);
               },
               child: const Text('Report Sheet'),
             ),

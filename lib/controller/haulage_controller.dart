@@ -19,6 +19,9 @@ class HaulageController extends GetxController {
   var BulldozerList = <Bulldozer>[];
   var WheelLoaderList = <WheelLoader>[];
   var ExcavatorList = <Excavator>[];
+  int currentChosenBulldozer = 0,
+      currentChosenWheelLoader = 0,
+      currentChosenExcavator = 0;
 
   EquipmentCTInput equipmentCTInput = EquipmentCTInput();
 
@@ -128,13 +131,13 @@ class HaulageController extends GetxController {
                 excavationController.excavation.marl * 1.0) /
             (rosterController.roster.numOfDays *
                 rosterController.roster.hourShift *
-                BulldozerList[0].value);
+                BulldozerList[currentChosenBulldozer].value);
 
     equipmentOverburden.excavator =
         (excavationController.excavation.stone * 1.0) /
             (rosterController.roster.numOfDays *
                 rosterController.roster.hourShift *
-                ExcavatorList[0].value);
+                ExcavatorList[currentChosenExcavator].value);
 
     equipmentOverburden.wheelLoader = ((excavationController.excavation.marl +
                 excavationController.excavation.mud_shale_clay +
@@ -142,7 +145,7 @@ class HaulageController extends GetxController {
             1.0) /
         (rosterController.roster.numOfDays *
             rosterController.roster.hourShift *
-            WheelLoaderList[0].value);
+            WheelLoaderList[currentChosenWheelLoader].value);
 
     equipmentOverburden.actror6Wheels =
         (excavationController.excavation.mud_shale_clay * 1.0) /
@@ -162,7 +165,7 @@ class HaulageController extends GetxController {
     equipmentPhosphate.excavator = (excavationController.excavation.phosphate) /
         (rosterController.roster.numOfDays *
             rosterController.roster.hourShift *
-            ExcavatorList[0].value);
+            ExcavatorList[currentChosenExcavator].value);
 
     equipmentPhosphate.actror6Wheels =
         (excavationController.excavation.phosphate) /
@@ -174,7 +177,7 @@ class HaulageController extends GetxController {
         (excavationController.excavation.phosphate) /
             (rosterController.roster.numOfDays *
                 rosterController.roster.hourShift *
-                WheelLoaderList[0].value);
+                WheelLoaderList[currentChosenWheelLoader].value);
   }
 
   void calculateTotalEquipment() {

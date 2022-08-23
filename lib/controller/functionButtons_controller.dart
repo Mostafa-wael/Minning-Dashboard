@@ -2,12 +2,15 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:pdf/pdf.dart';
+import 'package:minning/controller/excavation_controller.dart';
+import 'package:minning/controller/haulage_controller.dart';
 import 'package:pdf/widgets.dart' as pw;
 
 class FunctionButtonController {
   FunctionButtonController() {}
 
-  Future<void> reportSheet() async {
+  Future<void> reportSheet(HaulageController haulageController,
+      ExcavationController excavationController) async {
     final pdf = pw.Document();
     const baseColor = PdfColors.cyan;
     const tableHeaders = ['Category', 'Result'];
@@ -81,6 +84,7 @@ class FunctionButtonController {
       //   pw.Text('Stripping Cost /t: '),
       // ])),
       // ),
+
     );
 
     final file = File('reports/Report.pdf');

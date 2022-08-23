@@ -63,17 +63,17 @@ class _MyHomePageState extends State<MyHomePage> {
             height: MediaQuery.of(context).size.height * 7 / 10,
             // color: Colors.amber,
             child: Row(children: <Widget>[
-              LeftUpperWidget(haulageController: this.haulageController),
+              LeftUpperWidget(haulageController: haulageController),
               RightUpperWidget(
-                excavationController: this.excavationController,
-                rosterController: this.rosterController,
+                excavationController: excavationController,
+                rosterController: rosterController,
               )
             ]),
           ),
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height * 2.5 / 10,
             // color: Colors.blueAccent,
-            child: BottomWidget(),
+            child: const BottomWidget(),
           )
         ],
       ),

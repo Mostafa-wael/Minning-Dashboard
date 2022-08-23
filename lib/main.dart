@@ -78,7 +78,19 @@ class _MyHomePageState extends State<MyHomePage> {
               LeftUpperWidget(haulageController: haulageController),
             ]),
           ),
+<<<<<<< HEAD
           
+=======
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 2.5 / 10,
+            // color: Colors.blueAccent,
+            child: BottomWidget(
+              excavationController: excavationController,
+              haulageController: haulageController,
+              rosterController: rosterController,
+            ),
+          )
+>>>>>>> 3a6fc402b0f5b60badac0ad7f658971c1d96e3e7
         ],
       ),
       floatingActionButton: FloatingActionButton(

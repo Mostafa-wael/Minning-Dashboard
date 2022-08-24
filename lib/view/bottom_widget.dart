@@ -140,7 +140,6 @@ class ProjectData extends StatelessWidget {
                 child: SizedBox(
                   height: 19,
                   child: TextFormField(
-                    initialValue: 'Company Name',
                     enabled: true,
                     textAlign: TextAlign.center,
                     cursorColor: Colors.black,
@@ -168,7 +167,6 @@ class ProjectData extends StatelessWidget {
                 child: SizedBox(
                   height: 19,
                   child: TextFormField(
-                    initialValue: 'Project title',
                     enabled: true,
                     textAlign: TextAlign.center,
                     cursorColor: Colors.black,
@@ -196,7 +194,6 @@ class ProjectData extends StatelessWidget {
                 child: SizedBox(
                   height: 19,
                   child: TextFormField(
-                    initialValue: 'Prepared By',
                     enabled: true,
                     textAlign: TextAlign.center,
                     cursorColor: Colors.black,

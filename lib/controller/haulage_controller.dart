@@ -221,5 +221,11 @@ class HaulageController extends GetxController {
     totalEquipment.dumperTrucker = 0;
     totalEquipment.excavator = 0;
     totalEquipment.wheelLoader = 0;
+    //
+    output.bulldozer = 0;
+    output.dumperTrucker = 0;
+    output.actror6Wheels = 0;
+    output.excavator = 0;
+    output.wheelLoader = 0;
   }
 }

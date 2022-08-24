@@ -22,7 +22,12 @@ class ExcavationController {
   }
 
   void calculateStrippingCost() {
-    var random = new Random();
     excavation.strippingCostOverT = excavation.mud_shale_clay;
+  }
+
+  void initialValue() {
+    excavation.revenueOverT = 0;
+    excavation.productionCostOverT = 0;
+    excavation.strippingCostOverT = 0;
   }
 }

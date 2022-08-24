@@ -10,7 +10,7 @@ import '../controller/functionButtons_controller.dart';
 import '../controller/haulage_controller.dart';
 import '../decoration/textfield_decoration.dart';
 
-class BottomWidget extends StatelessWidget {
+class BottomWidget extends StatefulWidget {
   const BottomWidget(
       {super.key,
       required this.haulageController,
@@ -20,6 +20,11 @@ class BottomWidget extends StatelessWidget {
   final ExcavationController excavationController;
   final RosterController rosterController;
 
+  @override
+  State<BottomWidget> createState() => _BottomWidgetState();
+}
+
+class _BottomWidgetState extends State<BottomWidget> {
   @override
   Widget build(BuildContext context) {
     return widgetBody(context);
@@ -37,9 +42,9 @@ class BottomWidget extends StatelessWidget {
           radius: 50.0,
         ),
         FunctionButtons(
-          excavationController: excavationController,
-          haulageController: haulageController,
-          rosterController: rosterController,
+          excavationController: widget.excavationController,
+          haulageController: widget.haulageController,
+          rosterController: widget.rosterController,
         ),
         ProjectData(),
       ],
@@ -47,13 +52,11 @@ class BottomWidget extends StatelessWidget {
   }
 }
 
-class FunctionButtons extends StatelessWidget {
-  final FunctionButtonController functionButtonController =
-      FunctionButtonController();
+class FunctionButtons extends StatefulWidget {
   final HaulageController haulageController;
   final ExcavationController excavationController;
   final RosterController rosterController;
-  FunctionButtons({
+  const FunctionButtons({
     Key? key,
     required this.haulageController,
     required this.excavationController,
@@ -63,28 +66,41 @@ class FunctionButtons extends StatelessWidget {
         );
 
   @override
+  State<FunctionButtons> createState() => _FunctionButtonsState();
+}
+
+class _FunctionButtonsState extends State<FunctionButtons> {
+  final FunctionButtonController functionButtonController =
+      FunctionButtonController();
+
+  @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              print('new sheet');
+              functionButtonController.newSheet(
+                  widget.haulageController, widget.excavationController);
+            });
+          },
           child: const Text('New Sheet'),
         ),
         const SizedBox(width: 10.0, height: 10.0),
         ElevatedButton(
           onPressed: () {
             functionButtonController.reportSheet(
-                haulageController, excavationController);
+                widget.haulageController, widget.excavationController);
           },
           child: const Text('Report Sheet'),
         ),
         const SizedBox(width: 10.0, height: 10.0),
         ElevatedButton(
           onPressed: () {
-            functionButtonController.loadSheet(
-                haulageController, excavationController, rosterController
-            );
+            functionButtonController.loadSheet(widget.haulageController,
+                widget.excavationController, widget.rosterController);
           },
           child: const Text('Load Sheet'),
         ),
@@ -95,7 +111,6 @@ class FunctionButtons extends StatelessWidget {
             exit(0);
           },
           child: const Text('Exit Sheet'),
-
         ),
       ],
     );

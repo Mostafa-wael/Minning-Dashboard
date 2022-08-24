@@ -200,4 +200,26 @@ class HaulageController extends GetxController {
     // output.excavator = (totalEquipment.excavator.ceil().toInt());
     // output.wheelLoader = (totalEquipment.wheelLoader.ceil().toInt());
   }
+
+  void initialValue() {
+    eQuipmentCT.actros6Wheels = 0;
+    eQuipmentCT.actros6WheelsPh = 0;
+    eQuipmentCT.dumperTrucker = 0;
+    //
+    equipmentOverburden.bulldozer = 0;
+    equipmentOverburden.excavator = 0;
+    equipmentOverburden.wheelLoader = 0;
+    equipmentOverburden.actror6Wheels = 0;
+    equipmentOverburden.dumperTrucker = 0;
+    //
+    equipmentPhosphate.excavator = 0;
+    equipmentPhosphate.actror6Wheels = 0;
+    equipmentPhosphate.wheelLoader = 0;
+    //
+    totalEquipment.actror6Wheels = 0;
+    totalEquipment.bulldozer = 0;
+    totalEquipment.dumperTrucker = 0;
+    totalEquipment.excavator = 0;
+    totalEquipment.wheelLoader = 0;
+  }
 }

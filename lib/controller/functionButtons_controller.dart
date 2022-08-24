@@ -243,4 +243,12 @@ class FunctionButtonController {
       }
     }
   }
+
+  void newSheet(
+    HaulageController haulageController,
+    ExcavationController excavationController,
+  ) {
+    haulageController.initialValue();
+    excavationController.initialValue();
+  }
 }

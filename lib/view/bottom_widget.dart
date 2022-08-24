@@ -82,39 +82,20 @@ class FunctionButtons extends StatelessWidget {
         const SizedBox(width: 10.0, height: 10.0),
         ElevatedButton(
           onPressed: () {
-            functionButtonController.loadSheet();
+            functionButtonController.loadSheet(
+                haulageController, excavationController, rosterController
+            );
           },
           child: const Text('Load Sheet'),
         ),
         const SizedBox(width: 10.0, height: 10.0),
-<<<<<<< HEAD
         ElevatedButton(
           onPressed: () {
             // programmatically exit the app
             exit(0);
           },
           child: const Text('Exit Sheet'),
-=======
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                functionButtonController.loadSheet(
-                    haulageController, excavationController, rosterController);
-              },
-              child: const Text('Load Sheet'),
-            ),
-            const SizedBox(width: 10.0, height: 10.0),
-            ElevatedButton(
-              onPressed: () {
-                // programmatically exit the app
-                exit(0);
-              },
-              child: const Text('Exit Sheet'),
-            ),
-          ],
->>>>>>> 3a6fc402b0f5b60badac0ad7f658971c1d96e3e7
+
         ),
       ],
     );

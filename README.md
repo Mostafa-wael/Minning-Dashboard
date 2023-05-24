@@ -1,6 +1,6 @@
 # Mining Dashboard
 
-A simple desktop application to help mining engineers in calculations and report generation. 
+A simple desktop application to help mining engineers in calculations and report generation. A demo for a freelancing project.
 
 ## Home Page
 ![demo](https://user-images.githubusercontent.com/56788883/225486246-c25a871e-7adc-4579-9258-60e020b78124.jpg)
